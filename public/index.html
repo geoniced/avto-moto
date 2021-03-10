@@ -14,6 +14,100 @@
     <title>Avto Moto</title>
   </head>
   <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <a class="main-header__logo logo">
+          <img class="logo__image" src="img/logo.svg" alt="Логотип Сайта Avto Moto" width="134" height="55">
+        </a>
+
+        <ul class="main-header__site-navigation site-navigation">
+          <li class="site-navigation__item">
+            <a href="#" class="site-navigation__link">Автомобили</a>
+          </li>
+          <li class="site-navigation__item">
+            <a href="#" class="site-navigation__link">Контакты</a>
+          </li>
+          <li class="site-navigation__item">
+            <a href="#" class="site-navigation__link">Услуги</a>
+          </li>
+          <li class="site-navigation__item">
+            <a href="#" class="site-navigation__link">Вакансии</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <h1 class="visually-hidden">Карточка автомобиля Марпех 11</h1>
+
+      <section class="page-content__card-description card-description">
+        <div class="card-description__gallery gallery">
+          <img class="gallery__big-image" src="img/car-image-big-1.jpg" alt="Большое изображение 1" width="600" height="375">
+
+          <div class="gallery__slider slider">
+            <ul class="gallery__list">
+              <li class="gallery__item">
+                <img class="gallery__preview" src="img/car-image-1.jpg" alt="Превью изображения 1" width="128" height="80">
+              </li>
+              <li class="gallery__item">
+                <img class="gallery__preview" src="img/car-image-2.jpg" alt="Превью изображения 2" width="128" height="80">
+              </li>
+              <li class="gallery__item">
+                <img class="gallery__preview" src="img/car-image-3.jpg" alt="Превью изображения 3" width="128" height="80">
+              </li>
+            </ul>
+            <button class="slider__button slider__button--prev" type="button">Предыдущая фотография</button>
+            <button class="slider__button slider__button--prev" type="button">Следующая фотография</button>
+          </div>
+        </div>
+
+        <div class="card-description__car-info car-info">
+          <h2 class="car-info__title">Марпех 11</h2>
+
+          <ul class="car-info__features">
+            <li class="car-info__features-item">бензин</li>
+            <li class="car-info__features-item">механика</li>
+            <li class="car-info__features-item">100 л.с.</li>
+            <li class="car-info__features-item">1.4 л</li>
+          </ul>
+
+          <p class="car-info__price">
+            2 300 000 ₽ <s class="car-info__prev-price">2  400 000 ₽</s>
+          </p>
+
+          <a href="#" class="car-info__order">Оставить заявку</a>
+          <a href="#" class="car-info__credit">В кредит от 11 000 ₽</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <ul class="main-footer__navigation">
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Корпоративным клиентам</a>
+        </li>
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Клиентам</a>
+        </li>
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Аренда авто</a>
+        </li>
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Каршеринг</a>
+        </li>
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Как продать авто</a>
+        </li>
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Traid-in</a>
+        </li>
+        <li class="main-footer__navigation-item">
+          <a href="#" class="main-footer__navigation-link">Test draiv</a>
+        </li>
+      </ul>
+    </footer>
+
     <div id="root"></div>
+
   </body>
 </html>
