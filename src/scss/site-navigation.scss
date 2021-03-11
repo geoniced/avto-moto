@@ -5,6 +5,8 @@
 }
 
 .site-navigation__link {
+  color: $accent-black;
+
   @include basic-hover;
   @include basic-active;
 }
