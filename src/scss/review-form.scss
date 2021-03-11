@@ -88,6 +88,32 @@
   }
 }
 
+.review-form__star-icon {
+  width: 27px;
+  height: 25px;
+
+  fill: $star-dark-gray;
+  fill-opacity: 0.7;
+
+  // &--gray {
+  //   fill: $star-dark-gray;
+  //   fill-opacity: 0.7;
+  // }
+
+  // &--red {
+  //   fill: $red;
+  // }
+}
+
+.review-form__rating-star:checked + .review-form__rating-star-label .review-form__star-icon {
+  fill: $red;
+  fill-opacity: 1;
+}
+
+.review-form__rating-star-label {
+  margin-top: 6px;
+}
+
 .review-form__textarea {
   width: 100%;
   min-height: 118px;
