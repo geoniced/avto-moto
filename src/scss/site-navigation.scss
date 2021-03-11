@@ -2,6 +2,21 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 520px;
+}
+
+.site-navigation__item {
+  margin-right: 68px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
 }
 
 .site-navigation__link {
