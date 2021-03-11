@@ -1,3 +1,17 @@
+.stats {
+  margin: 0;
+}
+
+.stats__row-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 565px;
+  padding-top: 20px;
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid $gray;
+}
+
 .stats__value {
   margin: 0;
   color: $black;

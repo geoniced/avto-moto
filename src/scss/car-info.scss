@@ -1,25 +1,59 @@
 .car-info__title {
+  margin: 0;
+  margin-bottom: 15px;
+
   font-size: 30px;
   line-height: 41px;
   font-weight: 700;
 }
 
 .car-info__features {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 310px;
+
   @include list-reset;
+  margin-bottom: 35px;
 
   opacity: 0.5;
 }
 
+.car-info__features-item {
+  min-width: 70px;
+  margin-right: 7px;
+
+  text-align: center;
+
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
 .car-info__price {
+  margin: 0;
+  margin-bottom: 35px;
+
   font-size: 35px;
   line-height: 48px;
   font-weight: 700;
 }
 
 .car-info__prev-price {
+  margin-left: 30px;
   font-size: 20px;
   line-height: 27px;
   font-weight: 400;
 
   opacity: 0.5;
+}
+
+.car-info__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.car-info__order {
+  margin-bottom: 16px;
 }

@@ -1,8 +1,12 @@
 .tabs__list {
+  display: flex;
   @include list-reset;
+  margin-bottom: 30px;
 }
 
 .tabs__button {
+  padding: 14px;
+  padding-top: 11px;
   font-size: 20px;
   line-height: 27px;
   text-align: center;
