@@ -8,8 +8,31 @@
 }
 
 .slider__button {
+  width: 52px;
+  height: 52px;
+
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 50%;
+
+  stroke: $accent-black;
+
+  &--disabled {
+    stroke: $gray;
+  }
+
   &--prev {
     order: -1;
     margin-right: 30px;
   }
 }
+
+.slider__icon-arrow {
+  width: 20px;
+  height: 13px;
+}
+
+.slider__button--prev .slider__icon-arrow {
+  transform: rotate(180deg);
+}
+
