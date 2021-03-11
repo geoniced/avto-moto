@@ -3,9 +3,24 @@
 }
 
 .main-footer__navigation {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1173px;
+
+  @include list-reset;
+
+  @include centered-layout;
+}
+
+.main-footer__navigation-item {
+  margin-right: 66px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &:nth-of-type(7n) {
+    margin-right: 0;
+  }
 }
 
 .main-footer__navigation-link {

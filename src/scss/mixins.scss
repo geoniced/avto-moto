@@ -3,6 +3,12 @@
   margin: 0 auto;
 }
 
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 @mixin basic-hover {
   &:hover,
   &:focus {

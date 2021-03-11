@@ -21,9 +21,7 @@
 }
 
 .quote__rating-stars {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  @include list-reset;
 }
 
 .quote__rating-text {

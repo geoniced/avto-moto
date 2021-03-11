@@ -1,0 +1,18 @@
+.gallery__big-image {
+  margin-bottom: 39px;
+}
+
+.gallery__list {
+  display: flex;
+
+  @include list-reset;
+}
+
+.gallery__item {
+  display: flex;
+  margin-right: 25px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
