@@ -1,0 +1,31 @@
+.button {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+
+  @include basic-active;
+}
+
+.button--red {
+  color: $white;
+  background-color: $red;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-red;
+  }
+}
+
+.button--white {
+  color: $red;
+  border: 1px solid $red;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $red;
+  }
+}

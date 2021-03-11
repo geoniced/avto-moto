@@ -25,38 +25,3 @@
 
   opacity: 0.5;
 }
-
-.car-info__order {
-  font-size: 14px;
-  line-height: 19px;
-  font-weight: 600;
-  color: $white;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background-color: $red;
-
-  &:hover,
-  &:focus {
-    background-color: $dark-red;
-  }
-
-  @include basic-active;
-}
-
-.car-info__credit {
-  font-size: 14px;
-  line-height: 19px;
-  font-weight: 600;
-  color: $red;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border: 1px solid $red;
-
-  &:hover,
-  &:focus {
-    color: $white;
-    background-color: $red;
-  }
-
-  @include basic-active;
-}
