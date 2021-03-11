@@ -1,0 +1,16 @@
+.main-footer {
+  background-color: $light-gray;
+}
+
+.main-footer__navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-footer__navigation-link {
+  color: $accent-black;
+
+  @include basic-hover;
+  @include basic-active;
+}
