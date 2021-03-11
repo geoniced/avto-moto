@@ -1,0 +1,12 @@
+.site-navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-navigation__link {
+  color: $accent-black;
+
+  @include basic-hover;
+  @include basic-active;
+}
