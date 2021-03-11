@@ -1,0 +1,46 @@
+.quote__author {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.quote__subtitle {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  color: $black;
+}
+
+.quote__value {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 20px;
+  color: $black;
+}
+
+.quote__rating-stars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quote__rating-text {
+  color: $red;
+}
+
+.quote__time {
+  font-size: 14px;
+  line-height: 19px;
+
+  color: $black;
+  opacity: 0.4;
+}
+
+.quote__reply {
+  color: $red;
+
+  @include basic-hover;
+  @include basic-active;
+}

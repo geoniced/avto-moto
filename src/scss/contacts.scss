@@ -1,0 +1,30 @@
+.contacts__title {
+  font-weight: 700;
+  color: $contacts-black;
+}
+
+.contacts__value {
+  margin: 0;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  color: $contacts-black;
+
+  &--address {
+    color: $black;
+  }
+}
+
+.contacts__phone-link {
+  color: $contacts-black;
+
+  @include basic-hover;
+  @include basic-active;
+}
+
+.contacts__email-link {
+  color: $contacts-black;
+
+  @include basic-hover;
+  @include basic-active;
+}
