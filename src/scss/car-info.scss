@@ -61,12 +61,27 @@
 }
 
 .car-info__prev-price {
+  position: relative;
   margin-left: 30px;
   font-size: 20px;
   line-height: 27px;
   font-weight: 400;
+  text-decoration: none;
 
-  opacity: 0.5;
+  color: rgba($accent-black, 0.5);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: -10px;
+    width: 123px;
+    height: 1px;
+
+    transform-origin: center center;
+    transform: rotate(-6deg);
+    border-bottom: 1px solid $dark-gray;
+  }
 }
 
 .car-info__buttons-wrapper {
