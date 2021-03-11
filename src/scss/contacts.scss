@@ -1,10 +1,24 @@
+.contacts {
+  display: flex;
+  align-items: flex-start;
+}
+
+.contacts__info {
+  width: 274px;
+  margin: 0;
+  margin-right: 75px;
+}
+
 .contacts__title {
+  margin-bottom: 15px;
+
   font-weight: 700;
   color: $contacts-black;
 }
 
 .contacts__value {
   margin: 0;
+  margin-bottom: 25px;
   font-size: 14px;
   line-height: 19px;
   font-weight: 600;

@@ -1,11 +1,37 @@
+.quote {
+  margin: 0;
+}
+
 .quote__author {
+  display: block;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+  padding-right: 160px;
+
   font-size: 20px;
   line-height: 27px;
   font-weight: 600;
   font-style: normal;
 }
 
+.quote__descriptions {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.quote__descriptions-row-wrapper {
+  margin-bottom: 13px;
+  padding-left: 20px;
+
+  &--no-icon {
+    padding-left: 0;
+  }
+}
+
 .quote__subtitle {
+  margin-bottom: 3px;
+
   font-size: 15px;
   line-height: 20px;
   font-weight: 600;
@@ -20,15 +46,29 @@
   color: $black;
 }
 
+.quote__rating {
+  display: flex;
+  margin-bottom: 25px;
+}
+
 .quote__rating-stars {
   @include list-reset;
 }
 
 .quote__rating-text {
+  margin: 0;
+  padding: 0;
   color: $red;
 }
 
+.quote__actions {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
 .quote__time {
+  margin-right: 25px;
   font-size: 14px;
   line-height: 19px;
 

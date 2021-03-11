@@ -1,7 +1,22 @@
+.reviews {
+  position: relative;
+}
+
+.reviews__submit-review {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .reviews__list {
   @include list-reset;
 }
 
 .reviews__item {
+  margin-bottom: 20px;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
