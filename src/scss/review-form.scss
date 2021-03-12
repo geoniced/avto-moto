@@ -10,7 +10,9 @@
 
 .review-form__title {
   margin: 0;
-  margin-bottom: 45px;
+  margin-bottom: 24px;
+  padding-right: 4px;
+
   font-size: 25px;
   line-height: 34px;
   font-weight: 600;
@@ -48,16 +50,30 @@
 
 .review-form__wrapper {
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .review-form__column-wrapper {
   width: 300px;
-  margin-right: 28px;
+  margin-right: 27px;
 
   &:last-of-type {
     margin-right: 0;
   }
+}
+
+.review-form__field-wrapper {
+  margin-bottom: 16px;
+}
+
+.review-form__error-message {
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 19px;
+  color: $light-red;
 }
 
 .review-form__input,
@@ -66,7 +82,7 @@
   padding: 15px 25px;
 
   font-size: 14px;
-  line-height: 19px;
+  line-height: 18px;
   color: $accent-black;
 
   border: 1px solid rgba($accent-black, 0.2);
@@ -74,7 +90,11 @@
   &:required {
     background-image: url("../img/icon-required-field.svg");
     background-repeat: no-repeat;
-    background-position: 9px 12px;
+    background-position: 11px 12px;
+  }
+
+  &--error {
+    border-color: $light-red;
   }
 }
 
@@ -88,8 +108,9 @@
 
 .review-form__input-group {
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   padding: 0;
+  padding-top: 23px;
   border: none;
 }
 

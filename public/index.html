@@ -336,8 +336,11 @@
         <form class="review-form__form" action="#" method="POST">
           <div class="review-form__wrapper">
             <div class="review-form__column-wrapper">
-              <label for="review-name" class="review-form__label visually-hidden">Имя</label>
-              <input class="review-form__input" id="review-name" name="review-name" type="text" placeholder="Имя" required>
+              <div class="review-form__field-wrapper">
+                <p class="review-form__error-message">Пожалуйста, заполните поле</p>
+                <label for="review-name" class="review-form__label visually-hidden">Имя</label>
+                <input class="review-form__input review-form__input--error" id="review-name" name="review-name" type="text" placeholder="Имя" required>
+              </div>
 
               <label for="review-pros" class="review-form__label visually-hidden">Достоинства</label>
               <input class="review-form__input" id="review-pros" name="review-pros" type="text" placeholder="Достоинства">
