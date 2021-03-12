@@ -42,3 +42,19 @@
   @include basic-hover;
   @include basic-active;
 }
+
+.contacts__map-column {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    left: 114px;
+
+    width: 34px;
+    height: 42px;
+    background-image: url("../img/icon-map-blip.svg");
+    background-repeat: no-repeat;
+  }
+}
