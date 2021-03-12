@@ -6,6 +6,10 @@
   padding: 35px;
   padding-top: 30px;
   background-color: $light-gray;
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .review-form__title {
