@@ -9,8 +9,11 @@
   max-width: 1173px;
 
   @include list-reset;
+  padding-left: 10px;
 
   @include centered-layout;
+
+  font-weight: 600;
 }
 
 .main-footer__navigation-item {

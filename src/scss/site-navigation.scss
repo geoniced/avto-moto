@@ -8,7 +8,7 @@
 }
 
 .site-navigation__item {
-  margin-right: 73px;
+  margin-right: 68px;
   padding-top: 31px;
   padding-bottom: 30px;
 
@@ -19,6 +19,7 @@
 
 .site-navigation__link {
   color: $accent-black;
+  font-weight: 600;
 
   @include basic-hover;
   @include basic-active;
