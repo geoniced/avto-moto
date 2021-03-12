@@ -112,6 +112,11 @@
 
 .review-form__rating-star-label {
   margin-top: 6px;
+  margin-right: 8px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .review-form__textarea {
