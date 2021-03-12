@@ -42,9 +42,9 @@
   }
 }
 
-.review-form__input {
+.review-form__input,
+.review-form__textarea {
   width: 100%;
-  margin-bottom: 16px;
   padding: 15px 25px;
 
   font-size: 14px;
@@ -52,6 +52,16 @@
   color: $accent-black;
 
   border: 1px solid rgba($accent-black, 0.2);
+
+  &:required {
+    background-image: url("../img/icon-required-field.svg");
+    background-repeat: no-repeat;
+    background-position: 9px 12px;
+  }
+}
+
+.review-form__input {
+  margin-bottom: 16px;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -120,15 +130,7 @@
 }
 
 .review-form__textarea {
-  width: 100%;
   min-height: 118px;
-  padding: 15px 25px;
-
-  font-size: 14px;
-  line-height: 19px;
-  color: $accent-black;
-
-  border: 1px solid rgba($accent-black, 0.2);
 }
 
 .review-form__submit-button {
