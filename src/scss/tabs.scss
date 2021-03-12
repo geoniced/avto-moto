@@ -1,15 +1,18 @@
+.tabs {
+  padding-left: 6px;
+}
+
 .tabs__list {
   display: flex;
   @include list-reset;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .tabs__button {
   width: 195px;
-  padding: 14px;
-  padding-top: 11px;
+  padding: 11px 14px;
   font-size: 20px;
-  line-height: 27px;
+  line-height: 26px;
   text-align: center;
 
   border: 1px solid $gray;
