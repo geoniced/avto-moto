@@ -5,7 +5,7 @@
 .quote__author {
   display: block;
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
   padding: 0;
   padding-right: 160px;
 
@@ -17,13 +17,13 @@
 
 .quote__descriptions {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 21px;
 }
 
 .quote__descriptions-row-wrapper {
   position: relative;
-  margin-bottom: 13px;
-  padding-left: 20px;
+  margin-bottom: 14px;
+  padding-left: 19px;
 
   &--no-icon {
     padding-left: 0;
@@ -45,10 +45,14 @@
   &--cons::before {
     content: "–";
   }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .quote__subtitle {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 
   font-size: 15px;
   line-height: 20px;
@@ -66,13 +70,13 @@
 
 .quote__rating {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 }
 
 .quote__rating-stars {
   display: flex;
   @include list-reset;
-  margin-right: 20px;
+  margin-right: 18px;
 }
 
 .quote__rating-star {
@@ -110,7 +114,7 @@
 }
 
 .quote__time {
-  margin-right: 25px;
+  margin-right: 23px;
   font-size: 14px;
   line-height: 19px;
 
