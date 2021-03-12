@@ -1,5 +1,29 @@
+.gallery__big-image-wrapper {
+  position: relative;
+}
+
 .gallery__big-image {
-  margin-bottom: 39px;
+  margin-bottom: 34px;
+}
+
+.gallery__new-model-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 122px;
+  min-height: 30px;
+  margin: 0;
+  padding: 7px 10px;
+
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: $white;
+  background-color: $red;
 }
 
 .gallery__list {

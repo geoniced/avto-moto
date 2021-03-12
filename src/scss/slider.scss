@@ -4,12 +4,13 @@
 }
 
 .slider__photos {
-  margin-right: 30px;
+  margin-right: 31px;
 }
 
 .slider__button {
   width: 52px;
   height: 52px;
+  padding-top: 2px;
 
   background-color: $white;
   border: 1px solid $gray;
@@ -23,7 +24,7 @@
 
   &--prev {
     order: -1;
-    margin-right: 30px;
+    margin-right: 31px;
   }
 }
 

@@ -1,6 +1,7 @@
 .car-info__title {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 21px;
+  padding-left: 3px;
 
   font-size: 30px;
   line-height: 41px;
@@ -14,7 +15,8 @@
   max-width: 310px;
 
   @include list-reset;
-  margin-bottom: 35px;
+  margin-bottom: 37px;
+  padding-left: 3px;
 
   opacity: 0.5;
 }
@@ -52,8 +54,10 @@
 }
 
 .car-info__price {
+  display: flex;
   margin: 0;
-  margin-bottom: 35px;
+  margin-bottom: 37px;
+  padding-left: 3px;
 
   font-size: 35px;
   line-height: 48px;
@@ -62,7 +66,8 @@
 
 .car-info__prev-price {
   position: relative;
-  margin-left: 30px;
+  margin-top: 12px;
+  margin-left: 33px;
   font-size: 20px;
   line-height: 27px;
   font-weight: 400;
@@ -92,4 +97,9 @@
 
 .car-info__order {
   margin-bottom: 16px;
+}
+
+.car-info__credit {
+  padding-right: 17px;
+  padding-bottom: 14px;
 }
