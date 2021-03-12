@@ -58,3 +58,18 @@
     background-repeat: no-repeat;
   }
 }
+
+.contacts__map,
+.contacts__map-image {
+  width: 431px;
+  height: 271px;
+}
+
+.contacts__map {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: none;
+}
+
