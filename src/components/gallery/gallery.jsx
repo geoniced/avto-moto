@@ -1,7 +1,7 @@
-import carImgBig1 from "../../img/car-image-big-1.jpg";
-import carImg1 from "../../img/car-image-1.jpg";
-import carImg2 from "../../img/car-image-2.jpg";
-import carImg3 from "../../img/car-image-3.jpg";
+import carImgBig1 from "../../assets/img/car-image-big-1.jpg";
+import carImg1 from "../../assets/img/car-image-1.jpg";
+import carImg2 from "../../assets/img/car-image-2.jpg";
+import carImg3 from "../../assets/img/car-image-3.jpg";
 
 const Gallery = () => {
   return (

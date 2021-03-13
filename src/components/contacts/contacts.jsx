@@ -1,4 +1,4 @@
-import mapImg from "../../img/map.jpg";
+import mapImg from "../../assets/img/map.jpg";
 
 const Contacts = () => {
   return (
