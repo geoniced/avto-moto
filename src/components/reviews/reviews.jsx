@@ -1,7 +1,25 @@
-const Reviews = () => {
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
+import {openReviewFormPopup} from "../../store/actions";
+
+const Reviews = (props) => {
+  const {openPopup} = props;
+
+  const onAddReviewButtonClick = (evt) => {
+    evt.preventDefault();
+
+    openPopup();
+  };
+
   return (
     <div className="tabs-reviews reviews">
-      <a href="#" className="reviews__submit-review button button--white">оставить отзыв</a>
+      <a
+        onClick={onAddReviewButtonClick}
+        href="#"
+        className="reviews__submit-review button button--white"
+      >
+        оставить отзыв
+      </a>
 
       <ul className="reviews__list">
         <li className="reviews__item">
@@ -135,4 +153,15 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+Reviews.propTypes = {
+  openPopup: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  openPopup() {
+    dispatch(openReviewFormPopup());
+  }
+});
+
+export {Reviews};
+export default connect(null, mapDispatchToProps)(Reviews);
