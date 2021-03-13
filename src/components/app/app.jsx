@@ -1,5 +1,5 @@
 import CardDescription from "../card-description/card-description";
-import ReviewForm from "../review-form/review-form"
+import ReviewForm from "../review-form/review-form";
 
 const App = () => {
   return (
@@ -10,6 +10,6 @@ const App = () => {
       <ReviewForm />
     </>
   );
-}
+};
 
 export default App;

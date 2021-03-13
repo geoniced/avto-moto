@@ -19,7 +19,7 @@ const CarInfo = () => {
         <a href="#" className="car-info__credit button button--white">В кредит от 11 000 ₽</a>
       </div>
     </div>
-  )
+  );
 };
 
 export default CarInfo;

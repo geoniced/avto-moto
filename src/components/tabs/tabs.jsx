@@ -21,7 +21,7 @@ const Tabs = () => {
       <Reviews />
       <Contacts />
     </div>
-  )
+  );
 };
 
 export default Tabs;
