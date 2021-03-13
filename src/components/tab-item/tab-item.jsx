@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import {Tab} from "../../const";
 
 const TabItem = (props) => {
   const {
@@ -21,6 +23,13 @@ const TabItem = (props) => {
       </button>
     </li>
   );
+};
+
+TabItem.propTypes = {
+  type: PropTypes.oneOf([...Object.values(Tab)]).isRequired,
+  isActive: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  onTabClick: PropTypes.func.isRequired,
 };
 
 export default TabItem;
