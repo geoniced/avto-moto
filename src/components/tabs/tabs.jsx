@@ -9,28 +9,24 @@ const TABS = {
   [Tab.STATS]: {
     title: `Характеристики`,
     type: Tab.STATS,
+    component: Stats,
   },
   [Tab.REVIEWS]: {
     title: `Отзывы`,
     type: Tab.REVIEWS,
+    component: Reviews,
   },
   [Tab.CONTACTS]: {
     title: `Контакты`,
     type: Tab.CONTACTS,
+    component: Contacts,
   },
 };
 
 const getTabContentByTabType = (tabType) => {
-  switch (tabType) {
-    case Tab.STATS:
-      return <Stats />;
-    case Tab.REVIEWS:
-      return <Reviews />;
-    case Tab.CONTACTS:
-      return <Contacts />;
-  }
+  const TabContent = TABS[tabType].component;
 
-  return null;
+  return <TabContent />;
 };
 
 const Tabs = () => {
