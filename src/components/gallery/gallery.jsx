@@ -1,25 +1,5 @@
 import {useState} from "react";
-import carImgBig1 from "../../assets/img/car-image-big-1.jpg";
-import carImgBig2 from "../../assets/img/car-image-big-2.jpg";
-import carImgBig3 from "../../assets/img/car-image-big-3.jpg";
-import carImg1 from "../../assets/img/car-image-1.jpg";
-import carImg2 from "../../assets/img/car-image-2.jpg";
-import carImg3 from "../../assets/img/car-image-3.jpg";
-
-const IMAGES = [
-  {
-    preview: carImg1,
-    big: carImgBig1,
-  },
-  {
-    preview: carImg2,
-    big: carImgBig2,
-  },
-  {
-    preview: carImg3,
-    big: carImgBig3,
-  },
-];
+import {IMAGES} from "../../const";
 
 const FIRST_IMAGE = 0;
 const LAST_IMAGE = IMAGES.length - 1;
@@ -44,15 +24,11 @@ const Gallery = () => {
 
       <div className="gallery__slider slider">
         <ul className="gallery__list slider__photos">
-          <li className="gallery__item">
-            <img className="gallery__preview" src={carImg1} alt="Превью изображения 1" width="128" height="80" />
-          </li>
-          <li className="gallery__item">
-            <img className="gallery__preview" src={carImg2} alt="Превью изображения 2" width="128" height="80" />
-          </li>
-          <li className="gallery__item">
-            <img className="gallery__preview" src={carImg3} alt="Превью изображения 3" width="128" height="80" />
-          </li>
+          {IMAGES.map((image, i) => (
+            <li key={`preview-${i}`} className="gallery__item">
+              <img className="gallery__preview" src={image.preview} alt={`Превью изображения ${i}`} width="128" height="80" />
+            </li>
+          ))}
         </ul>
         <button
           onClick={onPrevButtonClick}
