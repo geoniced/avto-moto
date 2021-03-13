@@ -18,7 +18,8 @@
 
   stroke: $accent-black;
 
-  &--disabled {
+  &--disabled,
+  &:disabled {
     stroke: $gray;
   }
 
