@@ -19,3 +19,9 @@ export const IMAGES = [
     big: carImgBig3,
   },
 ];
+
+export const Tab = {
+  STATS: `STATS`,
+  REVIEWS: `REVIEWS`,
+  CONTACTS: `CONTACTS`,
+};
