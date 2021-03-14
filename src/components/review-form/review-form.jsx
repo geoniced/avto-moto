@@ -2,6 +2,9 @@ import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {closeReviewFormPopup} from "../../store/actions";
 import {createRef, useCallback, useEffect, useState} from "react";
+import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
+
+const STARS_COUNT = 5;
 
 const ReviewForm = (props) => {
   const {closePopupAction} = props;
@@ -29,7 +32,7 @@ const ReviewForm = (props) => {
   };
 
   const onStarsChange = (evt) => {
-    setStarsValue(evt.target.value);
+    setStarsValue(Number(evt.target.value));
   };
 
   const nameInputRef = createRef();
@@ -122,45 +125,14 @@ const ReviewForm = (props) => {
                 <div className="review-form__input-group-wrapper">
                   <legend className="review-form__input-group-label">Оцените товар:</legend>
 
-                  <input className="review-form__rating-star visually-hidden" id="review-star-1" name="review-star" type="radio" value="1" />
-                  <label htmlFor="review-star-1" className="review-form__rating-star-label">
-                    <svg className="review-form__star-icon">
-                      <use xlinkHref="#icon-star-big"></use>
-                    </svg>
-                    <span className="visually-hidden">1 звезда</span>
-                  </label>
-
-                  <input className="review-form__rating-star visually-hidden" id="review-star-2" name="review-star" type="radio" value="2" />
-                  <label htmlFor="review-star-2" className="review-form__rating-star-label">
-                    <svg className="review-form__star-icon">
-                      <use xlinkHref="#icon-star-big"></use>
-                    </svg>
-                    <span className="visually-hidden">2 звезды</span>
-                  </label>
-
-                  <input className="review-form__rating-star visually-hidden" id="review-star-3" name="review-star" type="radio" value="3" />
-                  <label htmlFor="review-star-3" className="review-form__rating-star-label">
-                    <svg className="review-form__star-icon">
-                      <use xlinkHref="#icon-star-big"></use>
-                    </svg>
-                    <span className="visually-hidden">3 звезды</span>
-                  </label>
-
-                  <input className="review-form__rating-star visually-hidden" id="review-star-4" name="review-star" type="radio" value="4" />
-                  <label htmlFor="review-star-4" className="review-form__rating-star-label">
-                    <svg className="review-form__star-icon">
-                      <use xlinkHref="#icon-star-big"></use>
-                    </svg>
-                    <span className="visually-hidden">4 звезды</span>
-                  </label>
-
-                  <input className="review-form__rating-star visually-hidden" id="review-star-5" name="review-star" type="radio" value="5" />
-                  <label htmlFor="review-star-5" className="review-form__rating-star-label">
-                    <svg className="review-form__star-icon">
-                      <use xlinkHref="#icon-star-big"></use>
-                    </svg>
-                    <span className="visually-hidden">5 звезд</span>
-                  </label>
+                  {new Array(STARS_COUNT).fill().map((_, index) => (
+                    <ReviewFormRatingStar
+                      key={`star-input-${index}`}
+                      starIndex={index}
+                      checked={starsValue === index}
+                      onRatingChange={onStarsChange}
+                    />
+                  ))}
                 </div>
               </fieldset>
 
