@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import {createRef, useCallback, useEffect, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
-import {ReviewField, STARS_COUNT} from "../../const";
-import {createFieldChangeHandler, getFormattedDate} from "../../utils";
+import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";
+import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity} from "../../utils";
+import FormErrorBlock from "../form-error-block/form-error-block";
 
 const clearStorage = () => {
   const fields = Object.values(ReviewField);
@@ -12,6 +13,8 @@ const clearStorage = () => {
     window.localStorage.removeItem(field);
   });
 };
+
+const isFieldNotEmpty = (field) => field !== ``;
 
 const ReviewForm = (props) => {
   const {closePopupAction, addReviewAction} = props;
@@ -22,6 +25,8 @@ const ReviewForm = (props) => {
   const [consValue, setConsValue] = useState(``);
   const [starsValue, setStarsValue] = useState(null);
   const [commentValue, setCommentValue] = useState(``);
+
+  const [formErrors, setFormErrors] = useState({});
 
   const onNameChange = createFieldChangeHandler(ReviewField.NAME, setNameValue);
   const onProsChange = createFieldChangeHandler(ReviewField.PROS, setProsValue);
@@ -50,19 +55,47 @@ const ReviewForm = (props) => {
   const onReviewSubmitClick = (evt) => {
     evt.preventDefault();
 
-    const newReview = {
-      userName: nameValue,
-      prosText: prosValue,
-      consText: consValue,
-      commentText: commentValue,
-      ratingStars: starsValue,
-      conclusionText: `Советует`,
-      dateTime: getFormattedDate(),
+    let isFormValid = true;
+
+    const nameFieldValidity = {
+      value: nameValue,
+      field: ReviewField.NAME,
+      validationFunction: isFieldNotEmpty,
+      setter: setFormErrors,
+      errorMessage: VALIDATION_MESSAGES.NAME,
     };
 
-    clearStorage();
-    addReviewAction(newReview);
-    closePopupAction();
+    const commentFieldValidity = {
+      value: commentValue,
+      field: ReviewField.COMMENT,
+      validationFunction: isFieldNotEmpty,
+      setter: setFormErrors,
+      errorMessage: VALIDATION_MESSAGES.COMMENT,
+    };
+
+    const validations = [
+      checkFieldValidity(nameFieldValidity),
+      checkFieldValidity(commentFieldValidity),
+    ];
+
+    if (validations.some(isInvalidValidation)) {
+      isFormValid = false;
+    }
+
+    if (isFormValid) {
+      const newReview = {
+        userName: nameValue,
+        prosText: prosValue,
+        consText: consValue,
+        commentText: commentValue,
+        ratingStars: starsValue,
+        dateTime: getFormattedDate(),
+      };
+
+      clearStorage();
+      addReviewAction(newReview);
+      closePopupAction();
+    }
   };
 
   const onEscKeydown = useCallback((evt) => {
@@ -112,13 +145,15 @@ const ReviewForm = (props) => {
           <div className="review-form__wrapper">
             <div className="review-form__column-wrapper">
               <div className="review-form__field-wrapper">
-                <p className="review-form__error-message">Пожалуйста, заполните поле</p>
+                <FormErrorBlock
+                  errorMessage={formErrors[ReviewField.NAME]}
+                />
                 <label htmlFor="review-name" className="review-form__label visually-hidden">Имя</label>
                 <input
                   onChange={onNameChange}
                   value={nameValue}
                   ref={nameInputRef}
-                  className="review-form__input review-form__input--error"
+                  className={`review-form__input ${formErrors[ReviewField.NAME] ? `review-form__input--error` : ``}`}
                   id="review-name" name="review-name"
                   type="text"
                   placeholder="Имя"
@@ -126,27 +161,31 @@ const ReviewForm = (props) => {
                 />
               </div>
 
-              <label htmlFor="review-pros" className="review-form__label visually-hidden">Достоинства</label>
-              <input
-                onChange={onProsChange}
-                value={prosValue}
-                className="review-form__input"
-                id="review-pros"
-                name="review-pros"
-                type="text"
-                placeholder="Достоинства"
-              />
+              <div className="review-form__field-wrapper">
+                <label htmlFor="review-pros" className="review-form__label visually-hidden">Достоинства</label>
+                <input
+                  onChange={onProsChange}
+                  value={prosValue}
+                  className="review-form__input"
+                  id="review-pros"
+                  name="review-pros"
+                  type="text"
+                  placeholder="Достоинства"
+                />
+              </div>
 
-              <label htmlFor="review-cons" className="review-form__label visually-hidden">Недостатки</label>
-              <input
-                onChange={onConsChange}
-                value={consValue}
-                className="review-form__input"
-                id="review-cons"
-                name="review-cons"
-                type="text"
-                placeholder="Недостатки"
-              />
+              <div className="review-form__field-wrapper">
+                <label htmlFor="review-cons" className="review-form__label visually-hidden">Недостатки</label>
+                <input
+                  onChange={onConsChange}
+                  value={consValue}
+                  className="review-form__input"
+                  id="review-cons"
+                  name="review-cons"
+                  type="text"
+                  placeholder="Недостатки"
+                />
+              </div>
             </div>
 
             <div className="review-form__column-wrapper">
@@ -169,18 +208,22 @@ const ReviewForm = (props) => {
                 </div>
               </fieldset>
 
-              <label htmlFor="review-comment" className="review-form__label visually-hidden">Комментарий</label>
-              <textarea
-                onChange={onCommentChange}
-                value={commentValue}
-                className="review-form__textarea"
-                id="review-comment"
-                name="review-comment"
-                type="text"
-                placeholder="Комментарий"
-                required
-              >
-              </textarea>
+              <div className="review-form__field-wrapper">
+                <FormErrorBlock
+                  errorMessage={formErrors[ReviewField.COMMENT]}
+                />
+                <label htmlFor="review-comment" className="review-form__label visually-hidden">Комментарий</label>
+                <textarea
+                  onChange={onCommentChange}
+                  value={commentValue}
+                  className={`review-form__textarea ${formErrors[ReviewField.COMMENT] ? `review-form__textarea--error` : ``}`}
+                  id="review-comment"
+                  name="review-comment"
+                  type="text"
+                  placeholder="Комментарий"
+                  required
+                />
+              </div>
             </div>
           </div>
 

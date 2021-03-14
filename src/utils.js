@@ -27,3 +27,26 @@ export const getFormattedDate = (date) => {
 export const getPassedDateFromNow = (date) => {
   return dayjs(date).fromNow();
 };
+
+export const isInvalidValidation = (validation) => validation === false;
+
+export const checkFieldValidity = ({value, field, validationFunction, setter, errorMessage}) => {
+  let isValid = true;
+
+  if (validationFunction(value)) {
+    setter((prevState) => {
+      return extend(prevState, {
+        [field]: ``,
+      });
+    });
+  } else {
+    isValid = false;
+    setter((prevState) => {
+      return extend(prevState, {
+        [field]: errorMessage,
+      });
+    });
+  }
+
+  return isValid;
+};

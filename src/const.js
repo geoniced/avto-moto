@@ -57,3 +57,8 @@ export const REVIEWS = [
     dateTime: getFormattedDate(`2021-03-14 18:30`), // TODO: real datetime
   },
 ];
+
+export const VALIDATION_MESSAGES = {
+  NAME: `Пожалуйста, заполните поле`,
+  COMMENT: `Пожалуйста, заполните поле`,
+};

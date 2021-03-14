@@ -30,7 +30,7 @@
 
 .review-form__title {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 47px;
   padding-right: 4px;
 
   font-size: 25px;
@@ -83,10 +83,19 @@
 }
 
 .review-form__field-wrapper {
+  position: relative;
   margin-bottom: 16px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .review-form__error-message {
+  position: absolute;
+  top: -23px;
+  left: 0.5px;
+
   margin: 0;
   margin-bottom: 4px;
   padding: 0;
@@ -118,19 +127,10 @@
   }
 }
 
-.review-form__input {
-  margin-bottom: 16px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
 .review-form__input-group {
   margin: 0;
   margin-bottom: 28px;
   padding: 0;
-  padding-top: 23px;
   border: none;
 }
 
