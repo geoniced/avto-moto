@@ -18,6 +18,14 @@ const createFieldChangeHandler = (fieldName, setter, isNumeric = false) => {
   };
 };
 
+const Field = {
+  NAME: `review-name`,
+  PROS: `review-pros`,
+  CONS: `review-cons`,
+  COMMENT: `review-comment`,
+  STARS: `review-stars`,
+};
+
 const ReviewForm = (props) => {
   const {closePopupAction} = props;
   const nameInputRef = createRef();
@@ -28,12 +36,19 @@ const ReviewForm = (props) => {
   const [starsValue, setStarsValue] = useState(null);
   const [commentValue, setCommentValue] = useState(``);
 
-  const onNameChange = createFieldChangeHandler(`review-name`, setNameValue);
-  const onProsChange = createFieldChangeHandler(`review-pros`, setProsValue);
-  const onConsChange = createFieldChangeHandler(`review-cons`, setConsValue);
-  const onCommentChange = createFieldChangeHandler(`review-comment`, setCommentValue);
-  const onStarsChange = createFieldChangeHandler(`review-stars`, setStarsValue, true);
+  const onNameChange = createFieldChangeHandler(Field.NAME, setNameValue);
+  const onProsChange = createFieldChangeHandler(Field.PROS, setProsValue);
+  const onConsChange = createFieldChangeHandler(Field.CONS, setConsValue);
+  const onCommentChange = createFieldChangeHandler(Field.COMMENT, setCommentValue);
+  const onStarsChange = createFieldChangeHandler(Field.STARS, setStarsValue, true);
 
+  const FieldMap = {
+    [Field.NAME]: {setter: setNameValue},
+    [Field.PROS]: {setter: setProsValue},
+    [Field.CONS]: {setter: setConsValue},
+    [Field.COMMENT]: {setter: setCommentValue},
+    [Field.STARS]: {setter: setStarsValue, isNumeric: true},
+  };
 
   const onClosePopupButtonClick = () => {
     closePopupAction();
@@ -61,6 +76,17 @@ const ReviewForm = (props) => {
 
   useEffect(() => {
     nameInputRef.current.focus();
+
+    const storage = window.localStorage;
+    Object.entries(storage).forEach(([storeName, storeValue], i) => {
+      if (FieldMap[storeName]) {
+        if (FieldMap[storeName].isNumeric) {
+          FieldMap[storeName].setter(Number(storeValue));
+        } else {
+          FieldMap[storeName].setter(storeValue);
+        }
+      }
+    });
   }, []);
 
   return (
@@ -123,14 +149,18 @@ const ReviewForm = (props) => {
                 <div className="review-form__input-group-wrapper">
                   <legend className="review-form__input-group-label">Оцените товар:</legend>
 
-                  {new Array(STARS_COUNT).fill().map((_, index) => (
-                    <ReviewFormRatingStar
-                      key={`star-input-${index}`}
-                      starIndex={index}
-                      checked={starsValue === index}
-                      onRatingChange={onStarsChange}
-                    />
-                  ))}
+                  {new Array(STARS_COUNT).fill().map((_, index) => {
+                    const currentStarIndex = index + 1;
+
+                    return (
+                      <ReviewFormRatingStar
+                        key={`star-input-${currentStarIndex}`}
+                        starIndex={currentStarIndex}
+                        checked={starsValue === currentStarIndex}
+                        onRatingChange={onStarsChange}
+                      />
+                    );
+                  })}
                 </div>
               </fieldset>
 
