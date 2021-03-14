@@ -1,10 +1,36 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {closeReviewFormPopup} from "../../store/actions";
-import {createRef, useEffect} from "react";
+import {createRef, useCallback, useEffect, useState} from "react";
 
 const ReviewForm = (props) => {
   const {closePopupAction} = props;
+
+  const [nameValue, setNameValue] = useState(``);
+  const [prosValue, setProsValue] = useState(``);
+  const [consValue, setConsValue] = useState(``);
+  const [starsValue, setStarsValue] = useState(null);
+  const [commentValue, setCommentValue] = useState(``);
+
+  const onNameChange = (evt) => {
+    setNameValue(evt.target.value);
+  };
+
+  const onProsChange = (evt) => {
+    setProsValue(evt.target.value);
+  };
+
+  const onConsChange = (evt) => {
+    setConsValue(evt.target.value);
+  };
+
+  const onCommentChange = (evt) => {
+    setCommentValue(evt.target.value);
+  };
+
+  const onStarsChange = (evt) => {
+    setStarsValue(evt.target.value);
+  };
 
   const nameInputRef = createRef();
 
@@ -18,19 +44,22 @@ const ReviewForm = (props) => {
     }
   };
 
-  const onEscKeydown = (evt) => {
+  const onEscKeydown = useCallback((evt) => {
     if (evt.key === `Escape` || evt.key === `Esc`) {
       closePopupAction();
     }
-  };
+  }, [closePopupAction]);
 
   useEffect(() => {
     document.addEventListener(`keydown`, onEscKeydown);
-    nameInputRef.current.focus();
 
     return () => {
       document.removeEventListener(`keydown`, onEscKeydown);
     };
+  }, [onEscKeydown]);
+
+  useEffect(() => {
+    nameInputRef.current.focus();
   }, []);
 
   return (
@@ -53,14 +82,39 @@ const ReviewForm = (props) => {
               <div className="review-form__field-wrapper">
                 <p className="review-form__error-message">Пожалуйста, заполните поле</p>
                 <label htmlFor="review-name" className="review-form__label visually-hidden">Имя</label>
-                <input ref={nameInputRef} className="review-form__input review-form__input--error" id="review-name" name="review-name" type="text" placeholder="Имя" required />
+                <input
+                  onChange={onNameChange}
+                  value={nameValue}
+                  ref={nameInputRef}
+                  className="review-form__input review-form__input--error"
+                  id="review-name" name="review-name"
+                  type="text"
+                  placeholder="Имя"
+                  required
+                />
               </div>
 
               <label htmlFor="review-pros" className="review-form__label visually-hidden">Достоинства</label>
-              <input className="review-form__input" id="review-pros" name="review-pros" type="text" placeholder="Достоинства" />
+              <input
+                onChange={onProsChange}
+                value={prosValue}
+                className="review-form__input"
+                id="review-pros"
+                name="review-pros"
+                type="text"
+                placeholder="Достоинства"
+              />
 
               <label htmlFor="review-cons" className="review-form__label visually-hidden">Недостатки</label>
-              <input className="review-form__input" id="review-cons" name="review-cons" type="text" placeholder="Недостатки" />
+              <input
+                onChange={onConsChange}
+                value={consValue}
+                className="review-form__input"
+                id="review-cons"
+                name="review-cons"
+                type="text"
+                placeholder="Недостатки"
+              />
             </div>
 
             <div className="review-form__column-wrapper">
@@ -111,7 +165,17 @@ const ReviewForm = (props) => {
               </fieldset>
 
               <label htmlFor="review-comment" className="review-form__label visually-hidden">Комментарий</label>
-              <textarea className="review-form__textarea" id="review-comment" name="review-comment" type="text" placeholder="Комментарий" required></textarea>
+              <textarea
+                onChange={onCommentChange}
+                value={commentValue}
+                className="review-form__textarea"
+                id="review-comment"
+                name="review-comment"
+                type="text"
+                placeholder="Комментарий"
+                required
+              >
+              </textarea>
             </div>
           </div>
 
