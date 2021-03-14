@@ -3,28 +3,10 @@ import PropTypes from "prop-types";
 import {createRef, useCallback, useEffect, useState} from "react";
 import {closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
+import {ReviewField} from "../../const";
+import {createFieldChangeHandler} from "../../utils";
 
 const STARS_COUNT = 5;
-
-const createFieldChangeHandler = (fieldName, setter, isNumeric = false) => {
-  return (evt) => {
-    let value = evt.target.value;
-    if (isNumeric) {
-      value = Number(value);
-    }
-
-    window.localStorage.setItem(fieldName, value);
-    setter(value);
-  };
-};
-
-const Field = {
-  NAME: `review-name`,
-  PROS: `review-pros`,
-  CONS: `review-cons`,
-  COMMENT: `review-comment`,
-  STARS: `review-stars`,
-};
 
 const ReviewForm = (props) => {
   const {closePopupAction} = props;
@@ -36,18 +18,18 @@ const ReviewForm = (props) => {
   const [starsValue, setStarsValue] = useState(null);
   const [commentValue, setCommentValue] = useState(``);
 
-  const onNameChange = createFieldChangeHandler(Field.NAME, setNameValue);
-  const onProsChange = createFieldChangeHandler(Field.PROS, setProsValue);
-  const onConsChange = createFieldChangeHandler(Field.CONS, setConsValue);
-  const onCommentChange = createFieldChangeHandler(Field.COMMENT, setCommentValue);
-  const onStarsChange = createFieldChangeHandler(Field.STARS, setStarsValue, true);
+  const onNameChange = createFieldChangeHandler(ReviewField.NAME, setNameValue);
+  const onProsChange = createFieldChangeHandler(ReviewField.PROS, setProsValue);
+  const onConsChange = createFieldChangeHandler(ReviewField.CONS, setConsValue);
+  const onCommentChange = createFieldChangeHandler(ReviewField.COMMENT, setCommentValue);
+  const onStarsChange = createFieldChangeHandler(ReviewField.STARS, setStarsValue, true);
 
   const FieldMap = {
-    [Field.NAME]: {setter: setNameValue},
-    [Field.PROS]: {setter: setProsValue},
-    [Field.CONS]: {setter: setConsValue},
-    [Field.COMMENT]: {setter: setCommentValue},
-    [Field.STARS]: {setter: setStarsValue, isNumeric: true},
+    [ReviewField.NAME]: {setter: setNameValue},
+    [ReviewField.PROS]: {setter: setProsValue},
+    [ReviewField.CONS]: {setter: setConsValue},
+    [ReviewField.COMMENT]: {setter: setCommentValue},
+    [ReviewField.STARS]: {setter: setStarsValue, isNumeric: true},
   };
 
   const onClosePopupButtonClick = () => {

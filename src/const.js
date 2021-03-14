@@ -25,3 +25,11 @@ export const Tab = {
   REVIEWS: `REVIEWS`,
   CONTACTS: `CONTACTS`,
 };
+
+export const ReviewField = {
+  NAME: `review-name`,
+  PROS: `review-pros`,
+  CONS: `review-cons`,
+  COMMENT: `review-comment`,
+  STARS: `review-stars`,
+};
