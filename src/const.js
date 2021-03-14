@@ -4,6 +4,7 @@ import carImgBig3 from "./assets/img/car-image-big-3.jpg";
 import carImg1 from "./assets/img/car-image-1.jpg";
 import carImg2 from "./assets/img/car-image-2.jpg";
 import carImg3 from "./assets/img/car-image-3.jpg";
+import {getFormattedDate} from "./utils";
 
 export const IMAGES = [
   {
@@ -44,7 +45,7 @@ export const REVIEWS = [
     commentText: `Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.`,
     ratingStars: 3,
     conclusionText: `Советует`,
-    dateTime: `1 минуту назад`, // TODO: real datetime
+    dateTime: getFormattedDate(`2021-03-14 18:45`), // TODO: real datetime
   },
   {
     userName: `Марсель Исмагилов`,
@@ -53,6 +54,6 @@ export const REVIEWS = [
     commentText: `Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.`,
     ratingStars: 3,
     conclusionText: `Советует`,
-    dateTime: `1 минуту назад`, // TODO: real datetime
+    dateTime: getFormattedDate(`2021-03-14 18:30`), // TODO: real datetime
   },
 ];

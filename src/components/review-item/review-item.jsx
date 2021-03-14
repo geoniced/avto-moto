@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {STARS_COUNT} from "../../const";
+import {getPassedDateFromNow, getFormattedDate} from "../../utils";
 
 const convertRatingToText = (rating) => {
   let ratingText;
@@ -69,7 +70,7 @@ const ReviewItem = (props) => {
         </div>
 
         <p className="quote__actions">
-          <time className="quote__time" dateTime="2021-03-10T22:23">{dateTime}</time>
+          <time className="quote__time" dateTime={getFormattedDate(dateTime)}>{getPassedDateFromNow(dateTime)}</time>
           <a href="#" className="quote__reply">Ответить</a>
         </p>
       </blockquote>

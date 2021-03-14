@@ -4,7 +4,7 @@ import {createRef, useCallback, useEffect, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
 import {ReviewField, STARS_COUNT} from "../../const";
-import {createFieldChangeHandler} from "../../utils";
+import {createFieldChangeHandler, getFormattedDate} from "../../utils";
 
 const clearStorage = () => {
   const fields = Object.values(ReviewField);
@@ -57,7 +57,7 @@ const ReviewForm = (props) => {
       commentText: commentValue,
       ratingStars: starsValue,
       conclusionText: `Советует`,
-      dateTime: String(Date.now()),
+      dateTime: getFormattedDate(),
     };
 
     clearStorage();
