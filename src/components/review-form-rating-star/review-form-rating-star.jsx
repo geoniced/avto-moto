@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import {Fragment, memo} from "react";
 import PropTypes from "prop-types";
 
 const ReviewFormRatingStar = (props) => {
@@ -31,4 +31,4 @@ ReviewFormRatingStar.propTypes = {
   onRatingChange: PropTypes.func.isRequired,
 };
 
-export default ReviewFormRatingStar;
+export default memo(ReviewFormRatingStar);

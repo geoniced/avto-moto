@@ -1,13 +1,26 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {closeReviewFormPopup} from "../../store/actions";
 import {createRef, useCallback, useEffect, useState} from "react";
+import {closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
 
 const STARS_COUNT = 5;
 
+const createFieldChangeHandler = (fieldName, setter, isNumeric = false) => {
+  return (evt) => {
+    let value = evt.target.value;
+    if (isNumeric) {
+      value = Number(value);
+    }
+
+    window.localStorage.setItem(fieldName, value);
+    setter(value);
+  };
+};
+
 const ReviewForm = (props) => {
   const {closePopupAction} = props;
+  const nameInputRef = createRef();
 
   const [nameValue, setNameValue] = useState(``);
   const [prosValue, setProsValue] = useState(``);
@@ -15,27 +28,12 @@ const ReviewForm = (props) => {
   const [starsValue, setStarsValue] = useState(null);
   const [commentValue, setCommentValue] = useState(``);
 
-  const onNameChange = (evt) => {
-    setNameValue(evt.target.value);
-  };
+  const onNameChange = createFieldChangeHandler(`review-name`, setNameValue);
+  const onProsChange = createFieldChangeHandler(`review-pros`, setProsValue);
+  const onConsChange = createFieldChangeHandler(`review-cons`, setConsValue);
+  const onCommentChange = createFieldChangeHandler(`review-comment`, setCommentValue);
+  const onStarsChange = createFieldChangeHandler(`review-stars`, setStarsValue, true);
 
-  const onProsChange = (evt) => {
-    setProsValue(evt.target.value);
-  };
-
-  const onConsChange = (evt) => {
-    setConsValue(evt.target.value);
-  };
-
-  const onCommentChange = (evt) => {
-    setCommentValue(evt.target.value);
-  };
-
-  const onStarsChange = (evt) => {
-    setStarsValue(Number(evt.target.value));
-  };
-
-  const nameInputRef = createRef();
 
   const onClosePopupButtonClick = () => {
     closePopupAction();
