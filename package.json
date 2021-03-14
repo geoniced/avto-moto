@@ -31,7 +31,8 @@
     "rules": {
       "default-case": "off",
       "jsx-a11y/anchor-is-valid": "off",
-      "jsx-a11y/iframe-has-title": "off"
+      "jsx-a11y/iframe-has-title": "off",
+      "react-hooks/exhaustive-deps": "off"
     }
   },
   "browserslist": {

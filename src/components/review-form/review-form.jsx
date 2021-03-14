@@ -1,10 +1,12 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {closeReviewFormPopup} from "../../store/actions";
-import {useEffect} from "react";
+import {createRef, useEffect} from "react";
 
 const ReviewForm = (props) => {
   const {closePopupAction} = props;
+
+  const nameInputRef = createRef();
 
   const onClosePopupButtonClick = () => {
     closePopupAction();
@@ -24,6 +26,7 @@ const ReviewForm = (props) => {
 
   useEffect(() => {
     document.addEventListener(`keydown`, onEscKeydown);
+    nameInputRef.current.focus();
 
     return () => {
       document.removeEventListener(`keydown`, onEscKeydown);
@@ -50,7 +53,7 @@ const ReviewForm = (props) => {
               <div className="review-form__field-wrapper">
                 <p className="review-form__error-message">Пожалуйста, заполните поле</p>
                 <label htmlFor="review-name" className="review-form__label visually-hidden">Имя</label>
-                <input className="review-form__input review-form__input--error" id="review-name" name="review-name" type="text" placeholder="Имя" required />
+                <input ref={nameInputRef} className="review-form__input review-form__input--error" id="review-name" name="review-name" type="text" placeholder="Имя" required />
               </div>
 
               <label htmlFor="review-pros" className="review-form__label visually-hidden">Достоинства</label>
