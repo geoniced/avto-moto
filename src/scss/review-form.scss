@@ -188,6 +188,14 @@
   }
 }
 
+.review-form__star-icon {
+  &:hover,
+  &:focus {
+    fill: $red;
+    fill-opacity: 1;
+  }
+}
+
 .review-form__textarea {
   min-height: 118px;
   resize: none;
