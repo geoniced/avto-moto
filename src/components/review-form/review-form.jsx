@@ -1,10 +1,10 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {closeReviewFormPopup} from "../../store/actions";
-import {getIsReviewFormPopupOpened} from "../../store/selectors";
+import {useEffect} from "react";
 
 const ReviewForm = (props) => {
-  const {isReviewFormPopupOpened, closePopupAction} = props;
+  const {closePopupAction} = props;
 
   const onClosePopupButtonClick = () => {
     closePopupAction();
@@ -16,10 +16,24 @@ const ReviewForm = (props) => {
     }
   };
 
+  const onEscKeydown = (evt) => {
+    if (evt.key === `Escape` || evt.key === `Esc`) {
+      closePopupAction();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener(`keydown`, onEscKeydown);
+
+    return () => {
+      document.removeEventListener(`keydown`, onEscKeydown);
+    };
+  }, []);
+
   return (
     <section
       onClick={onBlocklayerClick}
-      className={`review-form ${isReviewFormPopupOpened ? `` : `review-form--hidden`}`}
+      className="review-form"
     >
       <div className="review-form__popup-wrapper">
         <h2 className="review-form__title">Оставить отзыв</h2>
@@ -106,13 +120,8 @@ const ReviewForm = (props) => {
 };
 
 ReviewForm.propTypes = {
-  isReviewFormPopupOpened: PropTypes.bool.isRequired,
   closePopupAction: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = (state) => ({
-  isReviewFormPopupOpened: getIsReviewFormPopupOpened(state),
-});
 
 const mapDispatchToProps = (dispatch) => ({
   closePopupAction() {
@@ -121,4 +130,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export {ReviewForm};
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
+export default connect(null, mapDispatchToProps)(ReviewForm);
