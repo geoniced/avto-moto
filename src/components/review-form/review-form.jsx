@@ -10,8 +10,17 @@ const ReviewForm = (props) => {
     closePopupAction();
   };
 
+  const onBlocklayerClick = (evt) => {
+    if (evt.currentTarget === evt.target) {
+      closePopupAction();
+    }
+  };
+
   return (
-    <section className={`review-form ${isReviewFormPopupOpened ? `` : `review-form--hidden`}`}>
+    <section
+      onClick={onBlocklayerClick}
+      className={`review-form ${isReviewFormPopupOpened ? `` : `review-form--hidden`}`}
+    >
       <div className="review-form__popup-wrapper">
         <h2 className="review-form__title">Оставить отзыв</h2>
         <button className="review-form__close-button" type="button" onClick={onClosePopupButtonClick}>
