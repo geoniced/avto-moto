@@ -1,15 +1,20 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {createRef, useCallback, useEffect, useState} from "react";
-import {closeReviewFormPopup} from "../../store/actions";
+import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
-import {ReviewField} from "../../const";
+import {ReviewField, STARS_COUNT} from "../../const";
 import {createFieldChangeHandler} from "../../utils";
 
-const STARS_COUNT = 5;
+const clearStorage = () => {
+  const fields = Object.values(ReviewField);
+  fields.forEach((field) => {
+    window.localStorage.removeItem(field);
+  });
+};
 
 const ReviewForm = (props) => {
-  const {closePopupAction} = props;
+  const {closePopupAction, addReviewAction} = props;
   const nameInputRef = createRef();
 
   const [nameValue, setNameValue] = useState(``);
@@ -25,11 +30,11 @@ const ReviewForm = (props) => {
   const onStarsChange = createFieldChangeHandler(ReviewField.STARS, setStarsValue, true);
 
   const FieldMap = {
-    [ReviewField.NAME]: {setter: setNameValue},
-    [ReviewField.PROS]: {setter: setProsValue},
-    [ReviewField.CONS]: {setter: setConsValue},
-    [ReviewField.COMMENT]: {setter: setCommentValue},
-    [ReviewField.STARS]: {setter: setStarsValue, isNumeric: true},
+    [ReviewField.NAME]: {value: nameValue, setter: setNameValue},
+    [ReviewField.PROS]: {value: prosValue, setter: setProsValue},
+    [ReviewField.CONS]: {value: consValue, setter: setConsValue},
+    [ReviewField.COMMENT]: {value: commentValue, setter: setCommentValue},
+    [ReviewField.STARS]: {value: starsValue, setter: setStarsValue, isNumeric: true},
   };
 
   const onClosePopupButtonClick = () => {
@@ -40,6 +45,24 @@ const ReviewForm = (props) => {
     if (evt.currentTarget === evt.target) {
       closePopupAction();
     }
+  };
+
+  const onReviewSubmitClick = (evt) => {
+    evt.preventDefault();
+
+    const newReview = {
+      userName: nameValue,
+      prosText: prosValue,
+      consText: consValue,
+      commentText: commentValue,
+      ratingStars: starsValue,
+      conclusionText: `Советует`,
+      dateTime: String(Date.now()),
+    };
+
+    clearStorage();
+    addReviewAction(newReview);
+    closePopupAction();
   };
 
   const onEscKeydown = useCallback((evt) => {
@@ -161,7 +184,13 @@ const ReviewForm = (props) => {
             </div>
           </div>
 
-          <button className="review-form__submit-button button button--red" type="submit">Оставить отзыв</button>
+          <button
+            onClick={onReviewSubmitClick}
+            className="review-form__submit-button button button--red"
+            type="submit"
+          >
+            Оставить отзыв
+          </button>
         </form>
       </div>
     </section>
@@ -170,12 +199,16 @@ const ReviewForm = (props) => {
 
 ReviewForm.propTypes = {
   closePopupAction: PropTypes.func.isRequired,
+  addReviewAction: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
   closePopupAction() {
     dispatch(closeReviewFormPopup());
   },
+  addReviewAction(review) {
+    dispatch(addReview(review));
+  }
 });
 
 export {ReviewForm};
