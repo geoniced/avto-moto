@@ -62,3 +62,8 @@ export const VALIDATION_MESSAGES = {
   NAME: `Пожалуйста, заполните поле`,
   COMMENT: `Пожалуйста, заполните поле`,
 };
+
+export const Rating = {
+  DO_NOT_RECOMMEND: `Не советую`,
+  RECOMMEND: `Советую`,
+};

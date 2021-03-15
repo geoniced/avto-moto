@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ru";
+import {Rating} from "./const";
 
 dayjs.locale(`ru`);
 dayjs.extend(relativeTime);
@@ -52,3 +53,15 @@ export const checkFieldValidity = ({value, field, validationFunction, setter, er
 };
 
 export const isEscKeyPressed = (evt) => (evt.key === `Escape` || evt.key === `Esc`);
+
+export const convertRatingToText = (rating) => {
+  let ratingText;
+
+  if (rating <= 2) {
+    ratingText = Rating.DO_NOT_RECOMMEND;
+  } else {
+    ratingText = Rating.RECOMMEND;
+  }
+
+  return ratingText;
+};

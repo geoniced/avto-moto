@@ -1,24 +1,7 @@
 import PropTypes from "prop-types";
 import {STARS_COUNT} from "../../const";
-import {getPassedDateFromNow, getFormattedDate} from "../../utils";
+import {getPassedDateFromNow, getFormattedDate, convertRatingToText} from "../../utils";
 import {ReactComponent as IconStarSmall} from "../../assets/img/icon-star-small.svg";
-
-const convertRatingToText = (rating) => {
-  let ratingText;
-
-  switch (rating) {
-    case 1:
-    case 2:
-      ratingText = `Не советую`;
-      break;
-    case 3:
-    case 4:
-    case 5:
-      ratingText = `Советую`;
-  }
-
-  return ratingText;
-};
 
 const ReviewItem = (props) => {
   const {
