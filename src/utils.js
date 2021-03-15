@@ -50,3 +50,5 @@ export const checkFieldValidity = ({value, field, validationFunction, setter, er
 
   return isValid;
 };
+
+export const isEscKeyPressed = (evt) => (evt.key === `Escape` || evt.key === `Esc`);

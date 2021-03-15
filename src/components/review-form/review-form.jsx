@@ -4,7 +4,7 @@ import {createRef, useCallback, useEffect, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
 import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";
-import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity} from "../../utils";
+import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity, isEscKeyPressed} from "../../utils";
 import FormErrorBlock from "../form-error-block/form-error-block";
 import {ReactComponent as IconClose} from "../../assets/img/icon-close.svg";
 
@@ -100,7 +100,7 @@ const ReviewForm = (props) => {
   };
 
   const onEscKeydown = useCallback((evt) => {
-    if (evt.key === `Escape` || evt.key === `Esc`) {
+    if (isEscKeyPressed(evt)) {
       closePopupAction();
     }
   }, [closePopupAction]);

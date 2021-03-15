@@ -14,7 +14,7 @@ const Reviews = (props) => {
   };
 
   return (
-    <div className="tabs-reviews reviews">
+    <div className="tabs__reviews reviews">
       <a
         onClick={onAddReviewButtonClick}
         href="#"
