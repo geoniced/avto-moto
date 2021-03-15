@@ -1,12 +1,14 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {createRef, useCallback, useEffect, useState} from "react";
+import {createRef, useCallback, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
 import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";
 import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity, isEscKeyPressed} from "../../utils";
 import FormErrorBlock from "../form-error-block/form-error-block";
 import {ReactComponent as IconClose} from "../../assets/img/icon-close.svg";
+import {useReviewFormOpenLogic} from "../../hooks/use-review-form-open-logic/use-review-form-open-logic";
+import {useKeyDown} from "../../hooks/use-key-down/use-key-down";
 
 const clearStorage = () => {
   const fields = Object.values(ReviewField);
@@ -29,12 +31,6 @@ const ReviewForm = (props) => {
 
   const [formErrors, setFormErrors] = useState({});
 
-  const onNameChange = createFieldChangeHandler(ReviewField.NAME, setNameValue);
-  const onProsChange = createFieldChangeHandler(ReviewField.PROS, setProsValue);
-  const onConsChange = createFieldChangeHandler(ReviewField.CONS, setConsValue);
-  const onCommentChange = createFieldChangeHandler(ReviewField.COMMENT, setCommentValue);
-  const onStarsChange = createFieldChangeHandler(ReviewField.STARS, setStarsValue, true);
-
   const FieldMap = {
     [ReviewField.NAME]: {value: nameValue, setter: setNameValue},
     [ReviewField.PROS]: {value: prosValue, setter: setProsValue},
@@ -42,6 +38,12 @@ const ReviewForm = (props) => {
     [ReviewField.COMMENT]: {value: commentValue, setter: setCommentValue},
     [ReviewField.STARS]: {value: starsValue, setter: setStarsValue, isNumeric: true},
   };
+
+  const onNameChange = createFieldChangeHandler(ReviewField.NAME, setNameValue);
+  const onProsChange = createFieldChangeHandler(ReviewField.PROS, setProsValue);
+  const onConsChange = createFieldChangeHandler(ReviewField.CONS, setConsValue);
+  const onCommentChange = createFieldChangeHandler(ReviewField.COMMENT, setCommentValue);
+  const onStarsChange = createFieldChangeHandler(ReviewField.STARS, setStarsValue, true);
 
   const onClosePopupButtonClick = () => {
     closePopupAction();
@@ -105,28 +107,8 @@ const ReviewForm = (props) => {
     }
   }, [closePopupAction]);
 
-  useEffect(() => {
-    document.addEventListener(`keydown`, onEscKeydown);
-
-    return () => {
-      document.removeEventListener(`keydown`, onEscKeydown);
-    };
-  }, [onEscKeydown]);
-
-  useEffect(() => {
-    nameInputRef.current.focus();
-
-    const storage = window.localStorage;
-    Object.entries(storage).forEach(([storeName, storeValue], i) => {
-      if (FieldMap[storeName]) {
-        if (FieldMap[storeName].isNumeric) {
-          FieldMap[storeName].setter(Number(storeValue));
-        } else {
-          FieldMap[storeName].setter(storeValue);
-        }
-      }
-    });
-  }, []);
+  useKeyDown(onEscKeydown);
+  useReviewFormOpenLogic(nameInputRef, FieldMap);
 
   return (
     <section
