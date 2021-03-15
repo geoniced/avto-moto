@@ -62,10 +62,10 @@ const ReviewItem = (props) => {
 
 ReviewItem.propTypes = {
   userName: PropTypes.string.isRequired,
-  prosText: PropTypes.string.isRequired,
-  consText: PropTypes.string.isRequired,
+  prosText: PropTypes.string,
+  consText: PropTypes.string,
   commentText: PropTypes.string.isRequired,
-  ratingStars: PropTypes.number.isRequired,
+  ratingStars: PropTypes.number,
   dateTime: PropTypes.string.isRequired,
 };
 

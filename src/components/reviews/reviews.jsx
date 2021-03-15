@@ -43,10 +43,10 @@ const Reviews = (props) => {
 Reviews.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.shape({
     userName: PropTypes.string.isRequired,
-    prosText: PropTypes.string.isRequired,
-    consText: PropTypes.string.isRequired,
+    prosText: PropTypes.string,
+    consText: PropTypes.string,
     commentText: PropTypes.string.isRequired,
-    ratingStars: PropTypes.number.isRequired,
+    ratingStars: PropTypes.number,
     dateTime: PropTypes.string.isRequired,
   })),
   openPopup: PropTypes.func.isRequired,

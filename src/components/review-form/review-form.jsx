@@ -4,20 +4,11 @@ import {createRef, useCallback, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
 import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";
-import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity, isEscKeyPressed} from "../../utils";
+import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity, isEscKeyPressed, isFieldNotEmpty, clearStorage} from "../../utils";
 import FormErrorBlock from "../form-error-block/form-error-block";
 import {ReactComponent as IconClose} from "../../assets/img/icon-close.svg";
 import {useReviewFormOpenLogic} from "../../hooks/use-review-form-open-logic/use-review-form-open-logic";
 import {useKeyDown} from "../../hooks/use-key-down/use-key-down";
-
-const clearStorage = () => {
-  const fields = Object.values(ReviewField);
-  fields.forEach((field) => {
-    window.localStorage.removeItem(field);
-  });
-};
-
-const isFieldNotEmpty = (field) => field !== ``;
 
 const ReviewForm = (props) => {
   const {closePopupAction, addReviewAction} = props;
@@ -95,7 +86,7 @@ const ReviewForm = (props) => {
         dateTime: getFormattedDate(),
       };
 
-      clearStorage();
+      clearStorage(ReviewField);
       addReviewAction(newReview);
       closePopupAction();
     }

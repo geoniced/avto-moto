@@ -30,6 +30,7 @@ export const getPassedDateFromNow = (date) => {
 };
 
 export const isInvalidValidation = (validation) => validation === false;
+export const isFieldNotEmpty = (field) => field !== ``;
 
 export const checkFieldValidity = ({value, field, validationFunction, setter, errorMessage}) => {
   let isValid = true;
@@ -64,4 +65,11 @@ export const convertRatingToText = (rating) => {
   }
 
   return ratingText;
+};
+
+export const clearStorage = (Field) => {
+  const fields = Object.values(Field);
+  fields.forEach((field) => {
+    window.localStorage.removeItem(field);
+  });
 };
