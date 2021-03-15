@@ -5,13 +5,15 @@ export const useReviewFormOpenLogic = (nameInputRef, FieldMap) => {
     nameInputRef.current.focus();
 
     const storage = window.localStorage;
-    Object.entries(storage).forEach(([storeName, storeValue], i) => {
+    Object.entries(storage).forEach(([storeName, storeValue]) => {
+      let assignedValue = storeValue;
+
       if (FieldMap[storeName]) {
         if (FieldMap[storeName].isNumeric) {
-          FieldMap[storeName].setter(Number(storeValue));
-        } else {
-          FieldMap[storeName].setter(storeValue);
+          assignedValue = Number(storeValue);
         }
+
+        FieldMap[storeName].setter(assignedValue);
       }
     });
   }, []);
