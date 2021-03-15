@@ -1,26 +1,15 @@
-import React from "react";
-import CardDescription from "../card-description/card-description";
-import ReviewForm from "../review-form/review-form";
-import {getIsReviewFormPopupOpened} from "../../store/selectors";
-import {connect} from "react-redux";
+import MainHeader from "../main-header/main-header";
+import MainFooter from "../main-footer/main-footer";
+import PageContent from "../page-content/page-content";
 
-const CardDescriptionMemo = React.memo(CardDescription);
-
-const App = (props) => {
-  const {isReviewFormPopupOpened} = props;
-
+const App = () => {
   return (
     <>
-      <h1 className="visually-hidden">Карточка автомобиля Марпех 11</h1>
-
-      <CardDescriptionMemo />
-      {isReviewFormPopupOpened && <ReviewForm />}
+      <MainHeader />
+      <PageContent />
+      <MainFooter />
     </>
   );
 };
 
-const mapStateToProps = (state) => ({
-  isReviewFormPopupOpened: getIsReviewFormPopupOpened(state),
-});
-
-export default connect(mapStateToProps)(App);
+export default App;
