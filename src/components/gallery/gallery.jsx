@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {IMAGES} from "../../const";
+import {ReactComponent as IconSliderArrow} from "../../assets/img/icon-slider-arrow.svg";
 
 const FIRST_IMAGE = 0;
 const LAST_IMAGE = IMAGES.length - 1;
@@ -36,9 +37,7 @@ const Gallery = () => {
           className="slider__button slider__button--prev"
           type="button"
         >
-          <svg className="slider__icon-arrow">
-            <use xlinkHref="#icon-slider-arrow"></use>
-          </svg>
+          <IconSliderArrow className="slider__icon-arrow" />
           <span className="visually-hidden">Предыдущая фотография</span>
         </button>
 
@@ -48,9 +47,7 @@ const Gallery = () => {
           className="slider__button slider__button--next"
           type="button"
         >
-          <svg className="slider__icon-arrow">
-            <use xlinkHref="#icon-slider-arrow"></use>
-          </svg>
+          <IconSliderArrow className="slider__icon-arrow" />
           <span className="visually-hidden">Следующая фотография</span>
         </button>
       </div>

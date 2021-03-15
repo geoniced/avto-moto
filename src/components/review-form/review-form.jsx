@@ -6,6 +6,7 @@ import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-
 import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";
 import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity} from "../../utils";
 import FormErrorBlock from "../form-error-block/form-error-block";
+import {ReactComponent as IconClose} from "../../assets/img/icon-close.svg";
 
 const clearStorage = () => {
   const fields = Object.values(ReviewField);
@@ -135,9 +136,7 @@ const ReviewForm = (props) => {
       <div className="review-form__popup-wrapper">
         <h2 className="review-form__title">Оставить отзыв</h2>
         <button className="review-form__close-button" type="button" onClick={onClosePopupButtonClick}>
-          <svg className="review-form__close-icon">
-            <use xlinkHref="#icon-close"></use>
-          </svg>
+          <IconClose className="review-form__close-icon" />
           <span className="visually-hidden">Закрыть окно</span>
         </button>
 

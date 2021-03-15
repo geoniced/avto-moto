@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import {STARS_COUNT} from "../../const";
 import {getPassedDateFromNow, getFormattedDate} from "../../utils";
+import {ReactComponent as IconStarSmall} from "../../assets/img/icon-star-small.svg";
 
 const convertRatingToText = (rating) => {
   let ratingText;
@@ -58,9 +59,7 @@ const ReviewItem = (props) => {
             {new Array(STARS_COUNT).fill().map((_, index) => {
               return (
                 <li key={`quote-star-${index}`} className="quote__rating-star">
-                  <svg className={`quote__star-icon quote__star-icon--${index < ratingStars ? `red` : `gray`}`}>
-                    <use xlinkHref="#icon-star-small"></use>
-                  </svg>
+                  <IconStarSmall className={`quote__star-icon quote__star-icon--${index < ratingStars ? `red` : `gray`}`} />
                 </li>
               );
             })}
