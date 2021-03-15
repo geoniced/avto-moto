@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import Helmet from "react-helmet";
-import {createStore} from 'redux';
+import {createStore} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {Provider} from 'react-redux';
+import {Provider} from "react-redux";
 import App from "./components/app/app";
-import {reducer} from './store/reducer';
+import {reducer} from "./store/reducer";
 
 import openSansRegularWoff2 from "./assets/fonts/open-sans-regular.woff2";
 import "./scss/style.scss";
