@@ -55,10 +55,11 @@ export const checkFieldValidity = ({value, field, validationFunction, setter, er
 
 export const isEscKeyPressed = (evt) => (evt.key === `Escape` || evt.key === `Esc`);
 
+const RECOMMENDATION_THRESHOLD = 2;
 export const convertRatingToText = (rating) => {
   let ratingText;
 
-  if (rating <= 2) {
+  if (rating <= RECOMMENDATION_THRESHOLD) {
     ratingText = Rating.DO_NOT_RECOMMEND;
   } else {
     ratingText = Rating.RECOMMEND;
