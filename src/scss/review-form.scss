@@ -163,15 +163,6 @@
 
   fill: $star-dark-gray;
   fill-opacity: 0.7;
-
-  // &--gray {
-  //   fill: $star-dark-gray;
-  //   fill-opacity: 0.7;
-  // }
-
-  // &--red {
-  //   fill: $red;
-  // }
 }
 
 .review-form__rating-star:checked + .review-form__rating-star-label .review-form__star-icon {
