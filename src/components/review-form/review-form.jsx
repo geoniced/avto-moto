@@ -9,6 +9,7 @@ import FormErrorBlock from "../form-error-block/form-error-block";
 import {ReactComponent as IconClose} from "../../assets/img/icon-close.svg";
 import {useReviewFormOpenLogic} from "../../hooks/use-review-form-open-logic/use-review-form-open-logic";
 import {useKeyDown} from "../../hooks/use-key-down/use-key-down";
+import {usePreventPageScroll} from "../../hooks/use-prevent-page-scroll/use-prevent-page-scroll";
 
 const clearStorage = (Field) => {
   const fields = Object.values(Field);
@@ -105,6 +106,7 @@ const ReviewForm = (props) => {
     }
   }, [closePopupAction]);
 
+  usePreventPageScroll();
   useKeyDown(onEscKeydown);
   useReviewFormOpenLogic(nameInputRef, FieldMap);
 
