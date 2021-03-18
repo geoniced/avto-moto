@@ -1,6 +1,10 @@
 @mixin centered-layout {
-  width: 1173px;
+  width: auto;
+  max-width: $max-content-width;
+  min-width: $min-content-width;
   margin: 0 auto;
+  padding-right: 3.1%;
+  padding-left: 3.1%;
 }
 
 @mixin list-reset {

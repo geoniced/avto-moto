@@ -3,12 +3,7 @@
 }
 
 .main-header__nav {
-  width: auto;
-  max-width: $max-content-width;
-  min-width: $min-content-width;
-  margin: 0 auto;
-  padding-right: 3%;
-  padding-left: 3%;
+  @include centered-layout;
 
   display: flex;
   justify-content: space-between;
@@ -21,7 +16,7 @@
   padding-left: 7px;
 }
 
-@media (min-width: $max-content-width + 80px) {
+@media (min-width: $max-content-width + 70px) {
   .main-header__nav {
     padding-right: 0;
     padding-left: 0;
