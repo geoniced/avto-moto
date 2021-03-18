@@ -4,12 +4,11 @@
 
 .main-footer__navigation {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  max-width: 1173px;
 
   @include list-reset;
-  padding-left: 10px;
 
   @include centered-layout;
 
@@ -17,7 +16,6 @@
 }
 
 .main-footer__navigation-item {
-  margin-right: 66px;
   padding-top: 30px;
   padding-bottom: 30px;
 
@@ -31,4 +29,11 @@
 
   @include basic-hover;
   @include basic-active;
+}
+
+@media (min-width: $desktop-centered-threshold) {
+  .main-footer__navigation {
+    padding-right: 0;
+    padding-left: 10px;
+  }
 }
