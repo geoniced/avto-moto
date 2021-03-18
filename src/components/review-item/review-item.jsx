@@ -39,7 +39,7 @@ const ReviewItem = (props) => {
         <div className="quote__rating">
           <p className="visually-hidden">Оценка: {ratingStars}</p>
           <ul className="quote__rating-stars">
-            {new Array(STARS_COUNT).fill().map((_, index) => {
+            {new Array(STARS_COUNT).fill(``).map((_, index) => {
               return (
                 <li key={`quote-star-${index}`} className="quote__rating-star">
                   <IconStarSmall className={`quote__star-icon quote__star-icon--${index < ratingStars ? `red` : `gray`}`} />

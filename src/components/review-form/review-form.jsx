@@ -172,7 +172,7 @@ const ReviewForm = (props) => {
                 <div className="review-form__input-group-wrapper">
                   <legend className="review-form__input-group-label">Оцените товар:</legend>
 
-                  {new Array(STARS_COUNT).fill().map((_, index) => {
+                  {new Array(STARS_COUNT).fill(``).map((_, index) => {
                     const currentStarIndex = index + 1;
 
                     return (
