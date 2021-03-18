@@ -13,5 +13,7 @@ $red: #D12136;
 $dark-red: #BD0C21;
 
 
-$max-content-width: 1253px;
+$max-content-width: 1173px;
+$max-content-width-with-paddings: 1253px;
 $min-content-width: 1024px;
+$desktop-centered-threshold: $max-content-width + 45px;
