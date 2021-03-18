@@ -18,9 +18,12 @@
 
   stroke: $accent-black;
 
+  cursor: pointer;
+
   &--disabled,
   &:disabled {
     stroke: $gray;
+    cursor: initial;
   }
 
   &--prev {
