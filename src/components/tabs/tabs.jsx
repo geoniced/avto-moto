@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {Tab} from "../../const";
 import Contacts from "../contacts/contacts";
 import Reviews from "../reviews/reviews";

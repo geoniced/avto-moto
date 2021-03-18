@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {createRef, useCallback, useState} from "react";
+import React, {createRef, useCallback, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
 import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";

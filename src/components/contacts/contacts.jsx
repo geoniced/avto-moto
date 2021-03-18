@@ -1,3 +1,4 @@
+import React from "react";
 import mapImg from "../../assets/img/map.jpg";
 
 const Contacts = () => {

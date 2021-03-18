@@ -1,4 +1,4 @@
-import {Fragment, memo} from "react";
+import React, {Fragment, memo} from "react";
 import PropTypes from "prop-types";
 import {ReactComponent as IconStarBig} from "../../assets/img/icon-star-big.svg";
 

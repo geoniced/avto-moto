@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {IMAGES} from "../../const";
 import {ReactComponent as IconSliderArrow} from "../../assets/img/icon-slider-arrow.svg";
 

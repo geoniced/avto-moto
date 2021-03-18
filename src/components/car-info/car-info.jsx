@@ -1,3 +1,5 @@
+import React from "react";
+
 const CarInfo = () => {
   return (
     <div className="card-description__car-info car-info">

@@ -1,3 +1,4 @@
+import React from "react";
 import CarInfo from "../car-info/car-info";
 import Gallery from "../gallery/gallery";
 import Tabs from "../tabs/tabs";

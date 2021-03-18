@@ -1,3 +1,5 @@
+import React from "react";
+
 const Stats = () => {
   return (
     <dl className="tabs__stats stats">

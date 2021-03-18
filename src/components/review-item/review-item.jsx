@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import {STARS_COUNT} from "../../const";
 import {getPassedDateFromNow, getFormattedDate, convertRatingToText} from "../../utils";
