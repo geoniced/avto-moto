@@ -7,7 +7,8 @@
   max-width: $max-content-width;
   min-width: $min-content-width;
   margin: 0 auto;
-  padding-right: 20px;
+  padding-right: 3%;
+  padding-left: 3%;
 
   display: flex;
   justify-content: space-between;
@@ -20,8 +21,9 @@
   padding-left: 7px;
 }
 
-@media (min-width: $max-content-width + 50px) {
+@media (min-width: $max-content-width + 80px) {
   .main-header__nav {
     padding-right: 0;
+    padding-left: 0;
   }
 }
