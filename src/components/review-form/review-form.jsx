@@ -182,6 +182,7 @@ const ReviewForm = (props) => {
                         key={`star-input-${currentStarIndex}`}
                         starIndex={currentStarIndex}
                         checked={starsValue === currentStarIndex}
+                        chosenStarIndex={starsValue}
                         onRatingChange={onStarsChange}
                       />
                     );

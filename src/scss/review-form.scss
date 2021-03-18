@@ -165,7 +165,8 @@
   fill-opacity: 0.7;
 }
 
-.review-form__rating-star:checked + .review-form__rating-star-label .review-form__star-icon {
+.review-form__rating-star:checked + .review-form__rating-star-label .review-form__star-icon,
+.review-form__rating-star-label--chosen .review-form__star-icon {
   fill: $red;
   fill-opacity: 1;
 }

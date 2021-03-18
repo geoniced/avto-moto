@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import carImgBig1 from "./assets/img/car-image-big-1.jpg";
 import carImgBig2 from "./assets/img/car-image-big-2.jpg";
 import carImgBig3 from "./assets/img/car-image-big-3.jpg";
@@ -67,3 +68,5 @@ export const Rating = {
   DO_NOT_RECOMMEND: `Не советую`,
   RECOMMEND: `Советую`,
 };
+
+export const propTypesNumberOrNullRequired = PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.oneOf([null]).isRequired]);

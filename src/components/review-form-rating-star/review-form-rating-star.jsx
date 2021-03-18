@@ -1,9 +1,10 @@
 import React, {Fragment, memo} from "react";
 import PropTypes from "prop-types";
 import {ReactComponent as IconStarBig} from "../../assets/img/icon-star-big.svg";
+import {propTypesNumberOrNullRequired} from "../../const";
 
 const ReviewFormRatingStar = (props) => {
-  const {starIndex, checked, onRatingChange} = props;
+  const {starIndex, checked, chosenStarIndex, onRatingChange} = props;
 
   return (
     <Fragment>
@@ -16,7 +17,9 @@ const ReviewFormRatingStar = (props) => {
         name="review-star"
         type="radio"
       />
-      <label htmlFor={`review-star-${starIndex}`} className="review-form__rating-star-label">
+      <label
+        htmlFor={`review-star-${starIndex}`}
+        className={`review-form__rating-star-label ${starIndex <= chosenStarIndex ? `review-form__rating-star-label--chosen` : ``}`}>
         <IconStarBig className="review-form__star-icon" />
         <span className="visually-hidden">Оценка: {starIndex}</span>
       </label>
@@ -25,8 +28,9 @@ const ReviewFormRatingStar = (props) => {
 };
 
 ReviewFormRatingStar.propTypes = {
-  starIndex: PropTypes.number.isRequired,
+  starIndex: propTypesNumberOrNullRequired,
   checked: PropTypes.bool.isRequired,
+  chosenStarIndex: propTypesNumberOrNullRequired,
   onRatingChange: PropTypes.func.isRequired,
 };
 
