@@ -198,7 +198,6 @@ const ReviewForm = (props) => {
                   className={`review-form__textarea ${formErrors[ReviewField.COMMENT] ? `review-form__textarea--error` : ``}`}
                   id="review-comment"
                   name="review-comment"
-                  type="text"
                   placeholder="Комментарий"
                   required
                 />
