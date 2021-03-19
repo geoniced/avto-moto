@@ -59,7 +59,7 @@ export const REVIEWS = [
   },
 ];
 
-export const VALIDATION_MESSAGES = {
+export const ValidationMessage = {
   NAME: `Пожалуйста, заполните поле`,
   COMMENT: `Пожалуйста, заполните поле`,
 };

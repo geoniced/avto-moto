@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React, {createRef, useCallback, useState} from "react";
 import {addReview, closeReviewFormPopup} from "../../store/actions";
 import ReviewFormRatingStar from "../review-form-rating-star/review-form-rating-star";
-import {ReviewField, STARS_COUNT, VALIDATION_MESSAGES} from "../../const";
+import {ReviewField, STARS_COUNT, ValidationMessage} from "../../const";
 import {createFieldChangeHandler, getFormattedDate, isInvalidValidation, checkFieldValidity, isEscKeyPressed, isFieldNotEmpty} from "../../utils";
 import FormErrorBlock from "../form-error-block/form-error-block";
 import {ReactComponent as IconClose} from "../../assets/img/icon-close.svg";
@@ -64,7 +64,7 @@ const ReviewForm = (props) => {
       field: ReviewField.NAME,
       validationFunction: isFieldNotEmpty,
       setter: setFormErrors,
-      errorMessage: VALIDATION_MESSAGES.NAME,
+      errorMessage: ValidationMessage.NAME,
     };
 
     const commentFieldValidity = {
@@ -72,7 +72,7 @@ const ReviewForm = (props) => {
       field: ReviewField.COMMENT,
       validationFunction: isFieldNotEmpty,
       setter: setFormErrors,
-      errorMessage: VALIDATION_MESSAGES.COMMENT,
+      errorMessage: ValidationMessage.COMMENT,
     };
 
     const validations = [
