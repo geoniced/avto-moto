@@ -9,20 +9,25 @@ const MainHeader = () => {
           <img className="logo__image" src={logo} alt="Логотип Сайта Avto Moto" width="134" height="55" />
         </a>
 
-        <ul className="main-header__site-navigation site-navigation">
-          <li className="site-navigation__item">
-            <a href="#" className="site-navigation__link">Автомобили</a>
-          </li>
-          <li className="site-navigation__item">
-            <a href="#" className="site-navigation__link">Контакты</a>
-          </li>
-          <li className="site-navigation__item">
-            <a href="#" className="site-navigation__link">Услуги</a>
-          </li>
-          <li className="site-navigation__item">
-            <a href="#" className="site-navigation__link">Вакансии</a>
-          </li>
-        </ul>
+        <button className="main-header__menu">
+          <span className="visually-hidden">Открыть меню</span>
+        </button>
+        <div className="main-header__menu-wrapper">
+          <ul className="main-header__site-navigation site-navigation">
+            <li className="site-navigation__item">
+              <a href="#" className="site-navigation__link">Автомобили</a>
+            </li>
+            <li className="site-navigation__item">
+              <a href="#" className="site-navigation__link">Контакты</a>
+            </li>
+            <li className="site-navigation__item">
+              <a href="#" className="site-navigation__link">Услуги</a>
+            </li>
+            <li className="site-navigation__item">
+              <a href="#" className="site-navigation__link">Вакансии</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

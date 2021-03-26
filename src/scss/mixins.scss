@@ -1,7 +1,7 @@
 @mixin centered-layout {
   width: auto;
   max-width: $max-content-width;
-  min-width: $min-content-width;
+  // min-width: $min-content-width;
   margin: 0 auto;
   padding-right: 3.1%;
   padding-left: 3.1%;
