@@ -31,13 +31,24 @@
 }
 
 @media (max-width: $tablet-width) {
+  .main-header__nav {
+    padding-left: $tablet-paddings;
+    padding-right: $tablet-paddings;
+  }
+
+  .main-header__logo {
+    padding-left: 0;
+  }
+
   .main-header__menu {
+    position: relative;
+    right: -15px;
     box-sizing: content-box;
     align-self: center;
     display: block;
     width: 29px;
     height: 18px;
-    padding: 20px;
+    padding: 15px;
 
     border: none;
     background-color: transparent;
