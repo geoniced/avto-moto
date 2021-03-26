@@ -50,7 +50,31 @@
 
 @media (max-width: $tablet-width) {
   .main-footer__navigation {
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-left: $tablet-paddings;
     padding-right: $tablet-paddings;
+  }
+
+  // TODO: totaly tempary solution
+  .main-footer__navigation-item {
+    margin-bottom: 20px;
+    padding: 0;
+
+    &:nth-of-type(3n) {
+      width: 128px;
+    }
+
+    &:nth-of-type(3n - 1) {
+      width: 141px;
+    }
+
+    &:nth-of-type(3n - 2) {
+      width: 218px;
+    }
+
+    &:nth-of-type(7n) {
+      margin-bottom: 0;
+    }
   }
 }
