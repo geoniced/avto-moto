@@ -40,3 +40,17 @@
     padding-left: 10px;
   }
 }
+
+@media (min-width: $desktop-centered-threshold) {
+  .main-header__nav {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .main-footer__navigation {
+    padding-left: $tablet-paddings;
+    padding-right: $tablet-paddings;
+  }
+}
