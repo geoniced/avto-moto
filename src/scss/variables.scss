@@ -18,8 +18,11 @@ $max-content-width-with-paddings: 1253px;
 $min-content-width: 1000px;
 $desktop-centered-threshold: $max-content-width + 45px;
 
+$tablet-max-width: 1023px;
 $tablet-width: 768px;
 $tablet-offset: 21px;
 $tablet-paddings: ($tablet-offset / $tablet-width) * 100%;
+
+$mobile-max-width: 767px;
 $mobile-width: 320px;
 

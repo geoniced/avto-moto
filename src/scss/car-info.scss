@@ -103,3 +103,14 @@
   padding-right: 17px;
   padding-bottom: 14px;
 }
+
+@media (max-width: $tablet-max-width) {
+  .car-info__buttons-wrapper {
+    flex-direction: row;
+  }
+
+  .car-info__order {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+}

@@ -33,3 +33,9 @@
 .tabs__contacts {
   margin-top: 25px;
 }
+
+@media (max-width: $tablet-max-width) {
+  .tabs {
+    padding-left: 0;
+  }
+}

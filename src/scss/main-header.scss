@@ -30,7 +30,7 @@
   }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $tablet-max-width) {
   .main-header__nav {
     padding-left: $tablet-paddings;
     padding-right: $tablet-paddings;

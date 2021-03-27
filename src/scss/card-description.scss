@@ -27,3 +27,26 @@
     padding-left: 0;
   }
 }
+
+
+@media (max-width: $tablet-max-width) {
+  .card-description {
+    padding-bottom: 80px;
+  }
+
+  .card-description__wrapper {
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding-top: 21px;
+  }
+
+  .card-description__gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: initial;
+    padding-top: 0;
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+}

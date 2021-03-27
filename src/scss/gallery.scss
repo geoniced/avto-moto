@@ -1,9 +1,10 @@
 .gallery__big-image-wrapper {
   position: relative;
+  margin-bottom: 34px;
 }
 
 .gallery__big-image {
-  margin-bottom: 34px;
+  display: flex;
 }
 
 .gallery__new-model-text {
@@ -38,5 +39,19 @@
 
   &:last-of-type {
     margin-right: 0;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .gallery__big-image {
+    width: 100%;
+  }
+
+  .gallery__big-image-wrapper {
+    margin-bottom: 39px;
+  }
+
+  .gallery__slider {
+    align-self: center;
   }
 }

@@ -39,16 +39,14 @@
     padding-right: 0;
     padding-left: 10px;
   }
-}
 
-@media (min-width: $desktop-centered-threshold) {
   .main-header__nav {
     padding-right: 0;
     padding-left: 0;
   }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $tablet-max-width) {
   .main-footer__navigation {
     padding-top: 30px;
     padding-bottom: 30px;
