@@ -78,3 +78,21 @@
   border: none;
 }
 
+@media (max-width: $tablet-max-width) {
+  .contacts__info {
+    margin-right: 28px;
+  }
+
+  .contacts__map-column {
+    &::before {
+      top: 87px;
+      left: 69px;
+    }
+  }
+
+  .contacts__map,
+  .contacts__map-image {
+    width: 283px;
+    height: 283px;
+  }
+}
