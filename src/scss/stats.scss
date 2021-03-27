@@ -16,3 +16,9 @@
   margin: 0;
   color: $black;
 }
+
+@media (max-width: $tablet-max-width) {
+  .stats__row-wrapper {
+    width: auto;
+  }
+}

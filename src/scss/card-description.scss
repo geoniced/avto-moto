@@ -32,6 +32,8 @@
 @media (max-width: $tablet-max-width) {
   .card-description {
     padding-bottom: 80px;
+    padding-left: $tablet-paddings;
+    padding-right: $tablet-paddings;
   }
 
   .card-description__wrapper {

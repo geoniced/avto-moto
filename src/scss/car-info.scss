@@ -105,6 +105,18 @@
 }
 
 @media (max-width: $tablet-max-width) {
+  .car-info__title {
+    margin-bottom: 15px;
+  }
+
+  .car-info__features {
+    margin-bottom: 30px;
+  }
+
+  .car-info__price {
+    margin-bottom: 30px;
+  }
+
   .car-info__buttons-wrapper {
     flex-direction: row;
   }
