@@ -23,3 +23,14 @@
     margin-bottom: 0;
   }
 }
+
+@media (max-width: $tablet-max-width) {
+  .reviews__submit-review {
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .reviews__item {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+}

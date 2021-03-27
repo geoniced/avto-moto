@@ -1,5 +1,6 @@
 .quote {
   margin: 0;
+  padding-bottom: 20px;
 }
 
 .quote__author {
@@ -109,7 +110,6 @@
 
 .quote__actions {
   margin: 0;
-  margin-bottom: 20px;
   padding: 0;
 }
 
@@ -127,4 +127,19 @@
 
   @include basic-hover;
   @include basic-active;
+}
+
+@media (max-width: $tablet-max-width) {
+  .quote__descriptions-row-wrapper {
+    &--pros,
+    &--cons {
+      display: none;
+    }
+  }
+
+  .quote__subtitle {
+    &--comment {
+      display: none;
+    }
+  }
 }
