@@ -43,3 +43,10 @@
     margin-top: 30px;
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .tabs__reviews {
+    margin-top: 20px;
+  }
+}
+

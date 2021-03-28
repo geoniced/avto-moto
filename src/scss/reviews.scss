@@ -34,3 +34,15 @@
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .reviews {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reviews__submit-review {
+    align-self: center;
+  }
+}
+
