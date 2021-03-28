@@ -52,3 +52,19 @@
     margin-bottom: 60px;
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .card-description {
+    padding-left: $mobile-paddings;
+    padding-right: $mobile-paddings;
+  }
+
+  .card-description__wrapper {
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .card-description__gallery {
+    margin-bottom: 20px;
+  }
+}

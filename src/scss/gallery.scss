@@ -31,6 +31,7 @@
   display: flex;
 
   @include list-reset;
+  margin-right: 31px;
 }
 
 .gallery__item {
@@ -53,5 +54,15 @@
 
   .gallery__slider {
     align-self: center;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .gallery__big-image-wrapper {
+    margin-bottom: 0;
+  }
+
+  .gallery__slider {
+    display: none;
   }
 }

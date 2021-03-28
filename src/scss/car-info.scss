@@ -126,3 +126,32 @@
     margin-bottom: 0;
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .car-info__features-item {
+    min-width: initial;
+    margin-right: 15px;
+  }
+
+  .car-info__price {
+    flex-direction: column;
+  }
+
+  .car-info__prev-price {
+    margin-left: 0;
+
+    &::before {
+      left: -3px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  .car-info__buttons-wrapper {
+    flex-direction: column;
+  }
+
+  .car-info__order {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
