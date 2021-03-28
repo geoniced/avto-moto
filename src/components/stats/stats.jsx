@@ -29,7 +29,7 @@ const Stats = () => {
       </div>
 
       <div className="stats__row-wrapper">
-        <dt className="stats__title">Макс. крутящий момент</dt>
+        <dt className="stats__title">Макс. крутящий момент<span className="stats__moment">, Нм / об/мин</span></dt>
         <dd className="stats__value">370/4500</dd>
       </div>
 

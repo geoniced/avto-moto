@@ -17,8 +17,28 @@
   color: $black;
 }
 
+.stats__moment {
+  display: none;
+}
+
 @media (max-width: $tablet-max-width) {
   .stats__row-wrapper {
     width: auto;
   }
+
+  .stats__moment {
+    display: initial;
+  }
+
+
+  .stats__value {
+    font-weight: 600;
+  }
 }
+
+@media (max-width: $mobile-max-width) {
+  .stats__title {
+    max-width: 144px;
+  }
+}
+
