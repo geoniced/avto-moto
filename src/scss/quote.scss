@@ -130,6 +130,22 @@
 }
 
 @media (max-width: $tablet-max-width) {
+  .quote__author {
+    margin-bottom: 10px;
+
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  .quote__descriptions {
+    margin-bottom: 14px;
+  }
+
+  .quote__rating {
+    margin-bottom: 27px;
+  }
+
   .quote__descriptions-row-wrapper {
     &--pros,
     &--cons {
