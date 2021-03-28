@@ -78,3 +78,27 @@
     }
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .main-footer__navigation {
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 25px;
+    padding-left: $mobile-paddings;
+    padding-right: $mobile-paddings;
+  }
+
+  .main-footer__navigation-item {
+    margin-right: 0;
+    margin-bottom: 15px;
+
+    // TODO: because of the temporary solution above we have this assault battery of selectors...
+    &:nth-of-type(3n),
+    &:nth-of-type(3n - 1),
+    &:nth-of-type(3n - 2) {
+      width: auto;
+      margin-right: 0;
+    }
+  }
+}
