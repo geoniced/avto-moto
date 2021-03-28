@@ -26,4 +26,5 @@ $tablet-footer-margin: (120px / $tablet-width) * 100%;
 
 $mobile-max-width: 767px;
 $mobile-width: 320px;
-
+$mobile-offset: 16px;
+$mobile-paddings: ($mobile-offset / $mobile-width) * 100%;
