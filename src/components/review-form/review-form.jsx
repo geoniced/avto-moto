@@ -174,23 +174,25 @@ const ReviewForm = (props) => {
                 <div className="review-form__input-group-wrapper">
                   <legend className="review-form__input-group-label">Оцените товар:</legend>
 
-                  {new Array(STARS_COUNT).fill(``).map((_, index) => {
-                    const currentStarIndex = index + 1;
+                  <div className="review-form__stars-wrapper">
+                    {new Array(STARS_COUNT).fill(``).map((_, index) => {
+                      const currentStarIndex = index + 1;
 
-                    return (
-                      <ReviewFormRatingStar
-                        key={`star-input-${currentStarIndex}`}
-                        starIndex={currentStarIndex}
-                        checked={starsValue === currentStarIndex}
-                        chosenStarIndex={starsValue}
-                        onRatingChange={onStarsChange}
-                      />
-                    );
-                  })}
+                      return (
+                        <ReviewFormRatingStar
+                          key={`star-input-${currentStarIndex}`}
+                          starIndex={currentStarIndex}
+                          checked={starsValue === currentStarIndex}
+                          chosenStarIndex={starsValue}
+                          onRatingChange={onStarsChange}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </fieldset>
 
-              <div className="review-form__field-wrapper">
+              <div className="review-form__field-wrapper review-form__field-wrapper--comment">
                 <FormErrorBlock
                   errorMessage={formErrors[ReviewField.COMMENT]}
                 />
