@@ -67,7 +67,7 @@
 
 @media (max-width: $mobile-max-width) {
   .main-header__nav {
-    padding-left: $mobile-paddings;
-    padding-right: $mobile-paddings;
+    padding-left: $mobile-header-left-padding;
+    padding-right: $mobile-header-right-padding;
   }
 }
