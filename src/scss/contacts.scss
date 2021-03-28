@@ -83,10 +83,16 @@
     margin-right: 28px;
   }
 
+  .contacts__value {
+    &--address {
+      margin-bottom: 15px;
+    }
+  }
+
   .contacts__map-column {
     &::before {
-      top: 87px;
-      left: 69px;
+      top: 91px;
+      left: 68px;
     }
   }
 
