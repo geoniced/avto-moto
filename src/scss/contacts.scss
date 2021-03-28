@@ -102,3 +102,24 @@
     height: 283px;
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .contacts {
+    flex-direction: column;
+  }
+
+  .contacts__title,
+  .contacts__value {
+    &--schedule,
+    &--email {
+      display: none;
+    }
+  }
+
+  .contacts__map,
+  .contacts__map-image {
+    width: 288px;
+    height: 288px;
+  }
+}
+

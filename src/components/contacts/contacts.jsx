@@ -9,16 +9,16 @@ const Contacts = () => {
         <dt className="contacts__title contacts__title--address">Адрес</dt>
         <dd className="contacts__value contacts__value--address">Санкт-Петербург,<br />набережная реки Карповки, дом 5</dd>
 
-        <dt className="contacts__title">Режим работы</dt>
-        <dd className="contacts__value">Ежедневно, с 10:00 до 21:00</dd>
+        <dt className="contacts__title contacts__title--schedule">Режим работы</dt>
+        <dd className="contacts__value contacts__value--schedule">Ежедневно, с 10:00 до 21:00</dd>
 
         <dt className="contacts__title">Телефон</dt>
         <dd className="contacts__value">
           <a href="tel:88003335599" className="contacts__phone-link">8 (800) 333-55-99</a>
         </dd>
 
-        <dt className="contacts__title">E-mail</dt>
-        <dd className="contacts__value">
+        <dt className="contacts__title contacts__title--email">E-mail</dt>
+        <dd className="contacts__value contacts__value--email">
           <a href="mailto:info@avto-moto.ru" className="contacts__email-link">info@avto-moto.ru</a>
         </dd>
       </dl>
