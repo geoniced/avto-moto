@@ -58,10 +58,38 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 29px 18px;
+
+    @include basic-hover;
+    @include basic-active;
   }
 
   .main-header__menu-wrapper {
     display: none;
+
+    &--opened {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      display: block;
+
+      background-color: $light-gray;
+    }
+  }
+
+  .main-header__menu-wrapper--opened ~ .main-header__menu {
+    position: absolute;
+    right: $dropdown-menu-width;
+    background-color: $light-gray;
+    background-image: url("../assets/img/icon-close.svg");
+
+    &:hover,
+    &:focus {
+      background-color: $gray;
+    }
+
+    &:active {
+      background-color: $light-gray;
+    }
   }
 }
 

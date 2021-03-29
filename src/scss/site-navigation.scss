@@ -24,3 +24,25 @@
   @include basic-hover;
   @include basic-active;
 }
+
+@media (max-width: $tablet-max-width) {
+  .site-navigation {
+    flex-direction: column;
+    width: $dropdown-menu-width;
+  }
+
+  .site-navigation__item {
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .site-navigation__link {
+    display: flex;
+    padding: 30px;
+
+    &:hover,
+    &:focus {
+      background-color: $gray;
+    }
+  }
+}
