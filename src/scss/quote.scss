@@ -159,3 +159,14 @@
     }
   }
 }
+
+@media (max-width: $mobile-max-width) {
+  .quote__author {
+    margin-bottom: 9px;
+  }
+
+  .quote__descriptions {
+    margin-bottom: 24px;
+  }
+}
+
