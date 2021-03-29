@@ -8,7 +8,7 @@
 # testing
 /coverage
 
-# production
+# production, should not
 /build
 
 # misc
