@@ -45,11 +45,15 @@
 }
 
 @media (max-width: $mobile-max-width) {
-  .tabs__stats{
+  .tabs__stats {
     margin-top: 22px;
   }
 
   .tabs__reviews {
+    margin-top: 20px;
+  }
+
+  .tabs__contacts {
     margin-top: 20px;
   }
 }

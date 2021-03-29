@@ -108,11 +108,31 @@
     flex-direction: column;
   }
 
+  .contacts__info {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  .contacts__title {
+    margin-bottom: 4px;
+  }
+
+  .contacts__value {
+    margin-bottom: 10px;
+  }
+
   .contacts__title,
   .contacts__value {
     &--schedule,
     &--email {
       display: none;
+    }
+  }
+
+  .contacts__map-column {
+    &::before {
+      top: 93px;
+      left: 70px;
     }
   }
 
